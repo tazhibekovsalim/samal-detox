@@ -140,11 +140,7 @@
     .site-footer::before{content:"";position:absolute;inset:0 calc((var(--content) - 100vw) / 2);z-index:-1;background:var(--ink)}
     .site-footer p{margin:0}
     .footer-muted{color:var(--background)}
-    .back-to-top{position:fixed;right:24px;bottom:24px;z-index:9;display:grid;place-items:center;width:52px;height:52px;padding:0;border:1px solid var(--eucalyptus);border-radius:50%;background:var(--ink);color:var(--background);box-shadow:0 12px 26px color-mix(in srgb,var(--ink) 22%,transparent);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,visibility .2s ease,transform .2s ease,background .18s ease;cursor:pointer}
-    .back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
-    .back-to-top:hover{background:var(--primary);color:var(--background);transform:translateY(-2px)}
-    .back-to-top svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .telegram-status{position:fixed;right:16px;bottom:16px;z-index:10;max-width:300px;padding:14px 16px;background:var(--ink);color:var(--background);border-radius:var(--radius-pill);box-shadow:0 16px 30px var(--sand);font-size:14px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+     .telegram-status{position:fixed;right:16px;bottom:16px;z-index:10;max-width:300px;padding:14px 16px;background:var(--ink);color:var(--background);border-radius:var(--radius-pill);box-shadow:0 16px 30px var(--sand);font-size:14px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
     .telegram-status.is-visible{opacity:1;transform:translateY(0)}
 
     @media(min-width:1100px){
@@ -183,11 +179,10 @@
       .hero-visual::before{right:-36px;width:90%}.portrait-frame{right:auto;width:86%;margin-inline:auto 0}
       .hero-stamp{left:auto;bottom:auto;width:min(100%,240px);padding:18px 20px}
       .hero-quote{right:auto;bottom:auto;align-self:flex-end;width:min(100%,280px);font-size:16px}
-      .back-to-top{right:16px;bottom:16px}
       .programs-heading{display:block}.programs-heading p{margin-top:16px}
-      .site-footer{display:block;padding-bottom:88px}.site-footer p+p{margin-top:8px}
+      .site-footer{display:block}.site-footer p+p{margin-top:8px}
     }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.telegram-status,.back-to-top{transition:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.telegram-status{transition:none}}
 
      .site-header{
        position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:10;
@@ -217,7 +212,7 @@
        border-color:var(--primary);
        -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
      }
-     .button-quiet:hover{background:color-mix(in srgb,var(--background) 54%,transparent);color:var(--ink);transform:translateY(-2px)}
+     .button-quiet:hover{background:color-mix(in srgb,var(--background) 54%,transparent);color:var(--ink)}
     .hero-note{margin-top:16px}
     @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
         .hero-copy{background:var(--mist)}
@@ -584,9 +579,6 @@
   </main>
 
   <footer class="shell site-footer" data-od-id="site-footer"><p>Samal Detox · Самал Булатханкызы</p><p class="footer-muted">Главная · 2026</p></footer>
-  <button class="back-to-top" type="button" aria-label="Вернуться наверх" data-od-id="back-to-top">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"></path></svg>
-  </button>
   <div class="telegram-status" role="status" aria-live="polite" data-od-id="telegram-status">Переход в Telegram будет доступен после подключения бота.</div>
   <script>
     (function(){
@@ -604,19 +596,6 @@
       });
 
       var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var backToTop=document.querySelector('[data-od-id="back-to-top"]');
-      function updateBackToTop(){
-        if(!backToTop) return;
-        var scrollTop=window.scrollY || window.pageYOffset || 0;
-        backToTop.classList.toggle('is-visible',scrollTop > window.innerHeight*.65);
-      }
-      if(backToTop){
-        backToTop.addEventListener('click',function(){
-          window.scrollTo({top:0,behavior:reduceMotion ? 'auto' : 'smooth'});
-        });
-        updateBackToTop();
-        window.addEventListener('scroll',updateBackToTop,{passive:true});
-      }
       var compactHero=window.matchMedia('(max-width:480px)').matches;
       var heroSection=document.querySelector('[data-od-id="hero-bleed"]');
       var siteHeader=document.querySelector('[data-od-id="site-header"]');
@@ -664,14 +643,6 @@
       window.addEventListener('scroll',updateHeroNav,{passive:true});
       var revealEls=document.querySelectorAll('.programs-heading, .program-card');
       var programsSection=document.querySelector('[data-od-id="programs-section"]');
-      var programsLink=document.querySelector('[data-od-id="hero-programs"]');
-      if(programsLink && programsSection){
-        programsLink.addEventListener('click',function(event){
-          event.preventDefault();
-          var pageTop=(window.scrollY || window.pageYOffset || 0)+programsSection.getBoundingClientRect().top;
-          window.scrollTo({top:Math.max(0,pageTop),behavior:reduceMotion ? 'auto' : 'smooth'});
-        });
-      }
       var programMoodFrame=0;
       function updateProgramMood(){
         programMoodFrame=0;

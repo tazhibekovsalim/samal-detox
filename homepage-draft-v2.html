@@ -218,10 +218,6 @@
       .site-nav{gap:8px}
       .nav-cta{padding:10px 12px}
     }
-
-    /* ===== Hero cards: restrained scroll parallax ===== */
-    .hero-bleed .hero-stamp,.hero-bleed .hero-quote{will-change:transform}
-    @media(prefers-reduced-motion:reduce){.hero-bleed .hero-stamp,.hero-bleed .hero-quote{will-change:auto}}
   </style>
 </head>
 <body>
@@ -315,28 +311,6 @@
       var status=document.querySelector('[data-od-id="telegram-status"]');
       var links=document.querySelectorAll('.telegram-link');
       links.forEach(function(link){link.addEventListener('click',function(){status.classList.add('is-visible');window.clearTimeout(status._timer);status._timer=window.setTimeout(function(){status.classList.remove('is-visible')},4200)})});
-      var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var compactHero=window.matchMedia('(max-width:700px)').matches;
-      var heroMotion=[
-        {el:document.querySelector('[data-od-id="hero-bleed"] .hero-stamp'),max:compactHero ? 16 : 30},
-        {el:document.querySelector('[data-od-id="hero-bleed"] .hero-quote'),max:compactHero ? 20 : 38}
-      ];
-      var heroMotionFrame=0;
-      function updateHeroMotion(){
-        heroMotionFrame=0;
-        var scroll=Math.max(0,window.scrollY || window.pageYOffset || 0);
-        heroMotion.forEach(function(item){
-          if(!item.el) return;
-          var offset=Math.min(item.max,scroll*.1);
-          item.el.style.transform='translate3d(0,'+offset.toFixed(2)+'px,0)';
-        });
-      }
-      if(!reduceMotion){
-        updateHeroMotion();
-        window.addEventListener('scroll',function(){
-          if(!heroMotionFrame) heroMotionFrame=window.requestAnimationFrame(updateHeroMotion);
-        },{passive:true});
-      }
     }());
   </script>
 </body>

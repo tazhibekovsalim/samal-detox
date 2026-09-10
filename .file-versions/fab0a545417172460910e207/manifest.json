@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "fileName": "homepage-draft.html",
-  "currentVersionId": "b125e536-a972-4a81-8b4c-6f381625668d",
+  "currentVersionId": "7b8b15cf-81de-466e-a297-c2dcce1c11bf",
   "entries": [
     {
       "id": "f4b4cc11-df4c-422e-bd42-0da43a338548",
@@ -75,7 +75,22 @@
       "mime": "text/html; charset=utf-8",
       "kind": "html",
       "contentPath": "0005-b125e536-a972-4a81-8b4c-6f381625668d.html",
-      "contentDigest": "49e417f3a147f66ac204bb1d8efd67728e52e1c0d24faf8dcbe429e84362fdec",
+      "promptSource": "message",
+      "contentDigest": "49e417f3a147f66ac204bb1d8efd67728e52e1c0d24faf8dcbe429e84362fdec"
+    },
+    {
+      "id": "7b8b15cf-81de-466e-a297-c2dcce1c11bf",
+      "fileName": "homepage-draft.html",
+      "version": 6,
+      "label": "Version 6",
+      "createdAt": 1789061405250,
+      "source": "ai",
+      "prompt": "При скроле вниз в десктопной и планшетной версии плашки личное сопровождение и я рядом на каждом этапе программы абсолютно не двигаются. Че за трэш",
+      "size": 28783,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0006-7b8b15cf-81de-466e-a297-c2dcce1c11bf.html",
+      "contentDigest": "5a243ec8a9b3fd2b026027683a6f3c5f511863628aa887f643fb82ab5db93e48",
       "promptSource": "message"
     }
   ]

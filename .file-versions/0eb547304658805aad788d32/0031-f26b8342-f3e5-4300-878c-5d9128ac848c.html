@@ -79,7 +79,8 @@
 
     .trust-section{position:relative;isolation:isolate;overflow:hidden;background-color:var(--mist);background-image:url("assets/backgrounds/quiet-water-trust-v1.png");background-size:cover;background-position:center}
     .trust-body{display:grid;gap:20px}
-    .expert-profile{display:grid;gap:4px;padding:0;border:0}
+    .expert-profile{display:flex;align-items:center;gap:16px;padding-top:18px;border-top:1px solid var(--eucalyptus)}
+    .expert-initial{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:var(--background);font-family:"Cormorant Garamond Local",Georgia,serif;font-style:italic;font-size:28px}
     .expert-profile p{margin:0}
     .expert-name{font-weight:700}
     .expert-role{margin-top:3px!important;color:var(--primary);font-size:14px}
@@ -136,15 +137,10 @@
     .final-copy{max-width:430px;margin:0;font-size:17px}
     .final-cta .button-primary{background:var(--background);color:var(--primary);border-color:var(--background)}
     .final-cta .button-primary:hover{background:var(--eucalyptus);color:var(--ink);border-color:var(--eucalyptus)}
-    .site-footer{position:relative;isolation:isolate;display:flex;justify-content:space-between;gap:24px;padding:24px 0 34px;background:var(--ink);color:var(--background);font-size:13px}
-    .site-footer::before{content:"";position:absolute;inset:0 calc((var(--content) - 100vw) / 2);z-index:-1;background:var(--ink)}
+    .site-footer{display:flex;justify-content:space-between;gap:24px;padding:24px 0 34px;font-size:13px}
     .site-footer p{margin:0}
-    .footer-muted{color:var(--background)}
-    .back-to-top{position:fixed;right:24px;bottom:24px;z-index:9;display:grid;place-items:center;width:52px;height:52px;padding:0;border:1px solid var(--eucalyptus);border-radius:50%;background:var(--ink);color:var(--background);box-shadow:0 12px 26px color-mix(in srgb,var(--ink) 22%,transparent);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,visibility .2s ease,transform .2s ease,background .18s ease;cursor:pointer}
-    .back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
-    .back-to-top:hover{background:var(--primary);color:var(--background);transform:translateY(-2px)}
-    .back-to-top svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .telegram-status{position:fixed;right:16px;bottom:16px;z-index:10;max-width:300px;padding:14px 16px;background:var(--ink);color:var(--background);border-radius:var(--radius-pill);box-shadow:0 16px 30px var(--sand);font-size:14px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+    .footer-muted{color:var(--primary)}
+     .telegram-status{position:fixed;right:16px;bottom:16px;z-index:10;max-width:300px;padding:14px 16px;background:var(--ink);color:var(--background);border-radius:var(--radius-pill);box-shadow:0 16px 30px var(--sand);font-size:14px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
     .telegram-status.is-visible{opacity:1;transform:translateY(0)}
 
     @media(min-width:1100px){
@@ -183,11 +179,10 @@
       .hero-visual::before{right:-36px;width:90%}.portrait-frame{right:auto;width:86%;margin-inline:auto 0}
       .hero-stamp{left:auto;bottom:auto;width:min(100%,240px);padding:18px 20px}
       .hero-quote{right:auto;bottom:auto;align-self:flex-end;width:min(100%,280px);font-size:16px}
-      .back-to-top{right:16px;bottom:16px}
       .programs-heading{display:block}.programs-heading p{margin-top:16px}
-      .site-footer{display:block;padding-bottom:88px}.site-footer p+p{margin-top:8px}
+      .site-footer{display:block}.site-footer p+p{margin-top:8px}
     }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.telegram-status,.back-to-top{transition:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.telegram-status{transition:none}}
 
      .site-header{
        position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:10;
@@ -217,7 +212,7 @@
        border-color:var(--primary);
        -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
      }
-     .button-quiet:hover{background:color-mix(in srgb,var(--background) 54%,transparent);color:var(--ink);transform:translateY(-2px)}
+     .button-quiet:hover{background:color-mix(in srgb,var(--background) 54%,transparent);color:var(--ink)}
     .hero-note{margin-top:16px}
     @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
         .hero-copy{background:var(--mist)}
@@ -251,16 +246,14 @@
 
     /* ===== Motion: first-screen entrance ===== */
     @keyframes fade-up-nav{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}
-    @keyframes fade-nav-in{from{opacity:0}to{opacity:1}}
     @keyframes fade-up-copy{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fade-up-portrait{from{opacity:0;transform:translateY(22px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
     @keyframes fade-up-card{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-    .site-header{animation:fade-nav-in .5s cubic-bezier(.23,1,.32,1) both}
+    .site-header{animation:fade-up-nav .5s cubic-bezier(.22,1,.36,1) both}
     .hero-copy{animation:fade-up-copy .6s cubic-bezier(.22,1,.36,1) both}
     .portrait-frame{animation:fade-up-portrait .72s cubic-bezier(.22,1,.36,1) both}
-    .hero-stamp,.hero-quote{animation:fade-nav-in .52s cubic-bezier(.23,1,.32,1) both}
-    .hero-stamp{animation-delay:.18s}
-    .hero-quote{animation-delay:.28s}
+    .hero-stamp{animation:fade-up-card .52s cubic-bezier(.22,1,.36,1) both;animation-delay:.18s}
+    .hero-quote{animation:fade-up-card .52s cubic-bezier(.22,1,.36,1) both;animation-delay:.28s}
 
     /* ===== Motion: buttons — press feedback ===== */
     .button{transition:transform .15s ease,background .18s ease,color .18s ease}
@@ -359,8 +352,12 @@
     .programs-section .program-card:nth-child(4) .program-more{background:color-mix(in srgb,var(--ink) 72%,transparent);color:var(--eucalyptus)}
     .programs-section .program-card:nth-child(4) .program-more:hover{background:var(--eucalyptus);color:var(--ink)}
     .programs-section .program-card>a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:700}
+    .programs-section .program-guide{position:fixed;top:50%;right:24px;left:auto;z-index:6;width:min(330px,calc(100vw - 48px));margin:0;padding:16px 18px 17px;background:var(--ink);color:var(--background);border:1px solid var(--eucalyptus);border-radius:12px 30px 14px 26px / 18px 14px 26px 12px;box-shadow:0 18px 38px color-mix(in srgb,var(--ink) 24%,transparent);font-size:14px;line-height:1.4;opacity:0;visibility:hidden;transform:translate3d(0,8px,0);transition:opacity 180ms cubic-bezier(.23,1,.32,1),transform 180ms cubic-bezier(.23,1,.32,1);pointer-events:none}
+    .programs-section .program-guide::before{content:"";position:absolute;inset:7px 8px 8px;z-index:-1;border:1px solid color-mix(in srgb,var(--eucalyptus) 34%,transparent);border-left-color:transparent;border-radius:8px 22px 10px 18px / 12px 8px 18px 8px;pointer-events:none}
+    .programs-section.is-visible .program-guide{opacity:1;visibility:visible;transform:translate3d(0,0,0)}
+    .programs-section .program-guide.is-left{right:auto;left:24px}
     @media(max-width:480px){.programs-water-lines--lower{height:260px}.programs-section .program-card::before{inset:10px}}
-    @media(max-width:700px){.programs-section .program-card h3{font-size:clamp(24px,7vw,29px)}}
+    @media(max-width:700px){.programs-section .program-guide{top:auto;right:16px;bottom:16px;left:16px;width:auto;transform:translate3d(0,8px,0)}.programs-section .program-guide.is-left{right:16px;left:16px}.programs-section .program-card h3{font-size:clamp(24px,7vw,29px)}}
 
     /* ===== Safety: quiet field and pearl shell ===== */
     .safety-section{position:relative;isolation:isolate;overflow:hidden;background:var(--sand)}
@@ -399,7 +396,7 @@
     .trust-section>.section-grid{position:relative;z-index:1}
     .trust-section>.section-grid>*{position:relative;z-index:1;color:var(--ink)}
     .trust-section .trust-body{min-width:0;padding:32px;background:color-mix(in srgb,var(--mist) 23%,transparent);border:1px solid color-mix(in srgb,var(--background) 76%,transparent);border-radius:36px;box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 74%,transparent),0 18px 36px color-mix(in srgb,var(--ink) 10%,transparent);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px)}
-    .trust-section .expert-profile{display:grid;gap:4px;min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+    .trust-section .expert-profile{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid color-mix(in srgb,var(--background) 70%,transparent);border-radius:28px;background:color-mix(in srgb,var(--mist) 20%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 68%,transparent),0 12px 24px color-mix(in srgb,var(--ink) 8%,transparent);-webkit-backdrop-filter:blur(26px);backdrop-filter:blur(26px)}
     @media(max-width:480px){
       .trust-section{background-position:center}
       .trust-section::before{background:linear-gradient(180deg,color-mix(in srgb,var(--mist) 66%,transparent) 0%,color-mix(in srgb,var(--background) 82%,transparent) 44%,color-mix(in srgb,var(--background) 78%,transparent) 64%,color-mix(in srgb,var(--mist) 62%,transparent) 100%)}
@@ -431,24 +428,12 @@
     .hero-bleed .hero-visual::after{content:"";position:absolute;right:-4px;top:44px;width:74%;height:62%;z-index:0;border:1px solid color-mix(in srgb,var(--eucalyptus) 42%,transparent);border-radius:44% 56% 38% 62% / 58% 40% 60% 42%;transform:rotate(-8deg);pointer-events:none}
     .hero-bleed .hero-copy{background:color-mix(in srgb,var(--background) 58%,transparent);border-radius:24px 52px 34px 20px / 34px 24px 44px 28px;box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 82%,transparent),0 20px 44px color-mix(in srgb,var(--ink) 16%,transparent)}
     .hero-bleed .hero-copy::before{content:"";position:absolute;inset:10px 12px 12px 10px;z-index:-1;border:1px solid color-mix(in srgb,var(--primary) 22%,transparent);border-radius:16px 42px 26px 14px / 26px 16px 34px 20px;pointer-events:none}
-    .hero-bleed .hero-copy{will-change:background,color,border-color,box-shadow}
-    @media(prefers-reduced-motion:reduce){.hero-bleed .hero-copy{will-change:auto}}
-    .hero-bleed .hero-note{width:calc(100% - 48px);margin:14px 0 0 48px}
-    @media(max-width:480px){.hero-bleed .hero-note{width:calc(100% - 24px);margin:12px 0 0 24px}}
     @media(max-width:480px){.hero-bleed .hero-copy{background:color-mix(in srgb,var(--background) 64%,transparent);border-radius:22px 36px 28px 18px / 28px 20px 32px 18px}.hero-bleed .hero-visual::after{right:-12px;top:30px;width:80%;height:68%}}
 
     /* ===== Hero exit: navigation dissolves as the first scene leaves ===== */
     .site-header{transition:opacity .42s ease,transform .42s ease,filter .42s ease}
     .site-header.hero-nav-faded{pointer-events:none}
     @media(prefers-reduced-motion:reduce){.site-header{transition:none}}
-
-    /* ===== Proof: reversed reading order with a quiet stone contour ===== */
-    .proof-section{position:relative;isolation:isolate;overflow:hidden}
-    .proof-section::before{content:"";position:absolute;left:-8%;top:9%;bottom:8%;width:66%;z-index:-2;border:1px solid color-mix(in srgb,var(--background) 50%,transparent);border-radius:52% 46% 42% 58% / 38% 52% 48% 62%;background:color-mix(in srgb,var(--sand) 44%,transparent);transform:rotate(-7deg);box-shadow:inset 18px 0 34px color-mix(in srgb,var(--background) 34%,transparent),0 20px 44px color-mix(in srgb,var(--ink) 7%,transparent)}
-    .proof-section::after{content:"";position:absolute;left:3%;top:17%;bottom:15%;width:56%;z-index:-1;border:1px solid color-mix(in srgb,var(--background) 36%,transparent);border-right-color:transparent;border-radius:44% 56% 52% 48% / 48% 38% 62% 52%;transform:rotate(-7deg);pointer-events:none}
-    .proof-section>.shell{position:relative;z-index:1}
-    @media(min-width:1100px){.proof-section>.shell>.section-heading{grid-column:2;grid-row:1}.proof-section>.shell>div:nth-child(2){grid-column:1;grid-row:1}}
-    @media(max-width:700px){.proof-section::before{left:-28%;top:4%;bottom:44%;width:128%;border-radius:48% 52% 36% 64% / 34% 42% 58% 66%;transform:rotate(-4deg)}.proof-section::after{left:-14%;top:10%;bottom:48%;width:112%;border-radius:42% 58% 48% 52% / 44% 36% 64% 56%;transform:rotate(-4deg)}}
 
     /* ===== Trust pull-out panel: heading and personal content in one sculptural surface ===== */
     .trust-section .trust-body{position:relative;display:grid;gap:28px;min-width:0;width:100%;margin-right:0;padding:52px 128px 52px 48px;border:1px solid color-mix(in srgb,var(--background) 74%,transparent);border-radius:72px 0 0 72px / 58px 0 0 58px;background:color-mix(in srgb,var(--mist) 44%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 76%,transparent),0 22px 44px color-mix(in srgb,var(--ink) 14%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
@@ -460,11 +445,11 @@
     .trust-section .trust-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 16%;border-radius:50%}
     .trust-section .trust-copy{display:grid;gap:20px;min-width:0;max-width:620px}
     .trust-section .trust-copy .section-intro{max-width:54ch;margin:0;font-size:18px;line-height:1.48}
-    .trust-section .expert-profile{display:grid;gap:4px;min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+    .trust-section .expert-profile{display:flex;align-items:center;gap:16px;min-width:0;padding:16px 18px;border:1px solid color-mix(in srgb,var(--background) 66%,transparent);border-radius:26px;background:color-mix(in srgb,var(--mist) 38%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 70%,transparent),0 12px 24px color-mix(in srgb,var(--ink) 10%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
     .trust-section .expert-profile .expert-role{color:var(--primary)}
     @media(min-width:1100px){.trust-section .trust-body{grid-column:2;width:calc(100% + 112px);margin-right:-112px}}
     @media(min-width:481px) and (max-width:1099px){.trust-section .trust-body{padding:44px 72px 44px 36px}.trust-section .trust-main{grid-template-columns:108px minmax(0,1fr);gap:22px}.trust-section .trust-portrait{width:108px;height:108px}}
-    @media(max-width:480px){.trust-section>.section-grid{grid-template-columns:minmax(0,1fr)}.trust-section .trust-body{grid-column:1;width:100%;margin:0;padding:30px 22px 32px;border-radius:48px 36px 42px 28px / 38px 28px 32px 24px;gap:24px}.trust-section .trust-body::before{inset:10px 10px 10px 10px;border-right:1px solid color-mix(in srgb,var(--background) 38%,transparent);border-radius:38px 28px 32px 24px / 30px 22px 26px 18px}.trust-section .trust-body>h2{font-size:clamp(42px,13vw,56px)}.trust-section .trust-main{grid-template-columns:minmax(0,1fr);gap:22px}.trust-section .trust-portrait{width:112px;height:112px}.trust-section .trust-copy{gap:18px}.trust-section .trust-copy .section-intro{font-size:17px}.trust-section .expert-profile{gap:4px;padding:0;border:0;border-radius:0}}
+    @media(max-width:480px){.trust-section>.section-grid{grid-template-columns:minmax(0,1fr)}.trust-section .trust-body{grid-column:1;width:100%;margin:0;padding:30px 22px 32px;border-radius:48px 36px 42px 28px / 38px 28px 32px 24px;gap:24px}.trust-section .trust-body::before{inset:10px 10px 10px 10px;border-right:1px solid color-mix(in srgb,var(--background) 38%,transparent);border-radius:38px 28px 32px 24px / 30px 22px 26px 18px}.trust-section .trust-body>h2{font-size:clamp(42px,13vw,56px)}.trust-section .trust-main{grid-template-columns:minmax(0,1fr);gap:22px}.trust-section .trust-portrait{width:112px;height:112px}.trust-section .trust-copy{gap:18px}.trust-section .trust-copy .section-intro{font-size:17px}.trust-section .expert-profile{padding:16px 14px;border-radius:24px}}
 
     /* ===== Safety surface final override ===== */
     .safety-section .pending-panel{background:radial-gradient(circle at 82% 12%,color-mix(in srgb,var(--background) 94%,transparent),transparent 46%),color-mix(in srgb,var(--background) 68%,var(--mist))}
@@ -492,7 +477,7 @@
           <a class="button button-primary telegram-link" href="#telegram" data-od-id="hero-telegram">Перейти в Telegram-бот</a>
           <a class="button button-quiet" href="#programs" data-od-id="hero-programs">Посмотреть программы</a>
         </div>
-
+        <p class="hero-note">В боте — общение, ответы на вопросы и удобная оплата.</p>
       </div>
       <div class="hero-visual" data-od-id="hero-portrait-wrap">
         <div class="portrait-frame"><img src="assets/portraits/samal-quiet-water-v1.jpg" width="736" height="920" alt="Самал Булатханкызы, эксперт Samal Detox"></div>
@@ -531,6 +516,7 @@
       </div>
       <div class="shell">
         <div class="programs-heading"><h2 data-od-id="programs-heading">Выбери свой<br><em>ритм.</em></h2></div>
+        <p class="program-guide" data-od-id="programs-guide">Четыре формата — от одного дня до шести недель сопровождения. У каждого своя страница с деталями.</p>
         <div class="program-grid">
             <article class="program-card" data-od-id="program-tubage"><div class="program-top"><span class="program-index">01</span><p class="program-duration">1 день</p></div><h3>Глубинный однодневный тюбаж</h3><p class="program-pain"><strong>Лечит</strong>вздутие после еды · тяжесть в правом боку · запоры · горечь во рту · неприятный запах · акне и сухость кожи</p><div class="program-points-row"><ul class="program-points is-collapsed" aria-label="Возможные эффекты"><li>уходит объём</li><li>уходят отёки</li><li>меняется цвет лица</li><li>отвес до −2,5 кг</li><li>появляется энергия</li><li>лёгкость за день</li><li>отток желчи</li><li>разгрузка печени</li><li>уходит вздутие</li><li>выравниваются пищевые привычки</li></ul><button class="program-more" type="button" aria-expanded="false" data-od-id="program-tubage-more">Раскрыть пользу</button></div><a href="programs/tubazh.html" data-od-id="program-tubage-link">Подробнее о программе ↗</a></article>
             <article class="program-card" data-od-id="program-antiparasitic"><div class="program-top"><span class="program-index">02</span><p class="program-duration">3 дня</p></div><h3>3-дневное антипаразитарное очищение</h3><p class="program-pain"><strong>Лечит</strong>вздутие · тяжесть · запах изо рта · усталость · тяга к сладкому</p><div class="program-points-row"><ul class="program-points is-collapsed" aria-label="Возможные эффекты"><li>лёгкость в теле</li><li>уходит тяга к вредному</li><li>уходят объёмы</li><li>уходят отёки</li><li>отвес до −5 кг</li><li>с тюбажем до −6 кг</li><li>улучшается сон</li><li>появляется энергия</li></ul><button class="program-more" type="button" aria-expanded="false" data-od-id="program-antiparasitic-more">Раскрыть пользу</button></div><a href="programs/cleanse-3.html" data-od-id="program-antiparasitic-link">Подробнее о программе ↗</a></article>
@@ -547,8 +533,8 @@
           <div class="trust-main">
             <div class="trust-portrait"><img src="assets/portraits/samal-quiet-water-v1.jpg" width="736" height="920" alt="Самал Булатханкызы, эксперт Samal Detox"></div>
             <div class="trust-copy">
-              <div class="expert-profile" data-od-id="expert-profile"><p class="expert-name">Самал Булатханкызы</p><p class="expert-role">Основательница Samal Detox · личное сопровождение</p></div>
               <p class="section-intro">13+ лет в массаже и остеопатии, 6 лет — программы очищения и голодания, среднее специальное медицинское образование. Самал сама сопровождает каждого клиента, без делегирования команде.</p>
+              <div class="expert-profile" data-od-id="expert-profile"><div class="expert-initial" aria-hidden="true">С</div><div><p class="expert-name">Самал Булатханкызы</p><p class="expert-role">основательница Samal Detox · личное сопровождение 1:1</p></div></div>
               <a class="link-arrow" href="about.html" data-od-id="trust-about-link">Подробнее о Самал ↗</a>
             </div>
           </div>
@@ -584,9 +570,6 @@
   </main>
 
   <footer class="shell site-footer" data-od-id="site-footer"><p>Samal Detox · Самал Булатханкызы</p><p class="footer-muted">Главная · 2026</p></footer>
-  <button class="back-to-top" type="button" aria-label="Вернуться наверх" data-od-id="back-to-top">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"></path></svg>
-  </button>
   <div class="telegram-status" role="status" aria-live="polite" data-od-id="telegram-status">Переход в Telegram будет доступен после подключения бота.</div>
   <script>
     (function(){
@@ -604,23 +587,9 @@
       });
 
       var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var backToTop=document.querySelector('[data-od-id="back-to-top"]');
-      function updateBackToTop(){
-        if(!backToTop) return;
-        var scrollTop=window.scrollY || window.pageYOffset || 0;
-        backToTop.classList.toggle('is-visible',scrollTop > window.innerHeight*.65);
-      }
-      if(backToTop){
-        backToTop.addEventListener('click',function(){
-          window.scrollTo({top:0,behavior:reduceMotion ? 'auto' : 'smooth'});
-        });
-        updateBackToTop();
-        window.addEventListener('scroll',updateBackToTop,{passive:true});
-      }
       var compactHero=window.matchMedia('(max-width:480px)').matches;
       var heroSection=document.querySelector('[data-od-id="hero-bleed"]');
       var siteHeader=document.querySelector('[data-od-id="site-header"]');
-      var heroCopy=document.querySelector('[data-od-id="hero-bleed"] .hero-copy');
       var heroMotion=[
         {el:document.querySelector('.hero-bleed .hero-stamp'),max:22,rotation:compactHero ? '-1.4deg' : '-2.2deg'},
         {el:document.querySelector('.hero-bleed .hero-quote'),max:26,rotation:compactHero ? '1.6deg' : '2.4deg'}
@@ -638,21 +607,11 @@
       function updateHeroMotion(){
         heroMotionFrame=0;
         var scroll=Math.max(0,window.scrollY || window.pageYOffset || 0);
-        var progress=Math.max(0,Math.min(1,scroll/640));
         heroMotion.forEach(function(item){
           if(!item.el) return;
           var offset=Math.min(item.max,scroll*.08);
           item.el.style.transform='translate3d(0,'+offset.toFixed(2)+'px,0) rotate('+item.rotation+')';
         });
-        if(heroCopy){
-          var surfaceAlpha=(58*(1-progress)).toFixed(1);
-          var borderAlpha=(76*(1-progress)).toFixed(1);
-          var shadowAlpha=(16*(1-progress)).toFixed(1);
-          heroCopy.style.background=progress >= .99 ? 'transparent' : 'color-mix(in srgb,var(--background) '+surfaceAlpha+'%,transparent)';
-          heroCopy.style.color='var(--ink)';
-          heroCopy.style.borderColor=progress >= .99 ? 'transparent' : 'color-mix(in srgb,var(--background) '+borderAlpha+'%,transparent)';
-          heroCopy.style.boxShadow='inset 0 1px 0 color-mix(in srgb,var(--background) '+(82*(1-progress)).toFixed(1)+'%,transparent),0 20px 44px color-mix(in srgb,var(--ink) '+shadowAlpha+'%,transparent)';
-        }
       }
       if(!reduceMotion){
         updateHeroMotion();
@@ -664,14 +623,7 @@
       window.addEventListener('scroll',updateHeroNav,{passive:true});
       var revealEls=document.querySelectorAll('.programs-heading, .program-card');
       var programsSection=document.querySelector('[data-od-id="programs-section"]');
-      var programsLink=document.querySelector('[data-od-id="hero-programs"]');
-      if(programsLink && programsSection){
-        programsLink.addEventListener('click',function(event){
-          event.preventDefault();
-          var pageTop=(window.scrollY || window.pageYOffset || 0)+programsSection.getBoundingClientRect().top;
-          window.scrollTo({top:Math.max(0,pageTop),behavior:reduceMotion ? 'auto' : 'smooth'});
-        });
-      }
+      var programsGuide=document.querySelector('[data-od-id="programs-guide"]');
       var programMoodFrame=0;
       function updateProgramMood(){
         programMoodFrame=0;
@@ -682,6 +634,7 @@
         var progress=pageEnd <= pageTop ? 0 : Math.max(0,Math.min(1,((window.scrollY || window.pageYOffset || 0)-pageTop)/(pageEnd-pageTop)));
         programsSection.style.setProperty('--program-darkness',(progress*78).toFixed(2)+'%');
         programsSection.style.setProperty('--program-card-darkness','0%');
+        if(programsGuide && !compactHero) programsGuide.classList.toggle('is-left',progress >= .5);
       }
       updateProgramMood();
       window.addEventListener('scroll',function(){
@@ -705,8 +658,6 @@
       }
     }());
   </script>
-
-
 
 
 </body></html>

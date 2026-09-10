@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "homepage-draft-v2.html",
+  "currentVersionId": "2754c154-55d5-495e-baac-5df285f0fd8a",
+  "entries": [
+    {
+      "id": "2754c154-55d5-495e-baac-5df285f0fd8a",
+      "fileName": "homepage-draft-v2.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1789061405250,
+      "source": "ai",
+      "prompt": "При скроле вниз в десктопной и планшетной версии плашки личное сопровождение и я рядом на каждом этапе программы абсолютно не двигаются. Че за трэш",
+      "size": 27518,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-2754c154-55d5-495e-baac-5df285f0fd8a.html",
+      "contentDigest": "49e417f3a147f66ac204bb1d8efd67728e52e1c0d24faf8dcbe429e84362fdec",
+      "promptSource": "message"
+    }
+  ]
+}
