@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "group-programs.html",
+  "entry": "group-programs.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-09-10T11:22:34.410Z",
+  "updatedAt": "2026-09-10T11:22:34.410Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

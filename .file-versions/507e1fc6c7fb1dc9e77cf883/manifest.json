@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "typography-comparison.html",
+  "currentVersionId": "ce5b37d5-9a2e-49b1-979c-6c283abc8ddb",
+  "entries": [
+    {
+      "id": "ce5b37d5-9a2e-49b1-979c-6c283abc8ddb",
+      "fileName": "typography-comparison.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1789031355383,
+      "source": "ai",
+      "prompt": "Create an actual viewable typography comparison artifact now for Samal Detox, Russian UI. Brief confirmed in MCP; do not ask another interview. Read brief/design-system-brief.md, brief/next-step.md and tokens/approved-colors.css. Selected direction Quiet Water and palette are APPROVED. Produce typography-comparison.html as entry, with 3 meaningfully different real font pairs (expressive italic headings + readable sans body). Use identical sample text for fair comparison, small hero headline 'С заботой о вас. На каждом этапе.', expert name Самал Булатханкызы, body paragraph about personal accompaniment with no invented medical claims, Telegram CTA sample, program sample with only verified details from brief. Include desktop/mobile responsive layout and Cyrillic/Kazakh specimen ә ғ қ ң ө ұ ү һ і Ә Ғ Қ Ң Ө Ұ Ү Һ І, ₸ ₽ $. Verify actual font cmap for glyph coverage in both normal and italic fonts, choose fonts actually covering needed characters, use local font assets with appropriate licenses where possible. Label sample pairs clearly with actual font names. If coverage cannot be verified say so, don't claim it. Include one short Russian explanation per pair and recommendation, no invented professional scores. This is only a typography specimen, not full website, not a new palette. Palette #205A50 #87B7AB #DDEBE5 #F7F5EF #E4D9C8 #183D38. No photos necessary. No image generation, no videos, no new design direction workshop. Save an attractive, complete page that user can inspect immediately, and short typography-notes.md with font sources/license/coverage evidence. Use configured Local Codex model; user specifically requested same model. Do not switch models. Finish with artifact preview.",
+      "size": 15485,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-ce5b37d5-9a2e-49b1-979c-6c283abc8ddb.html",
+      "contentDigest": "246a96c56b3e428d8cb7c8e4253f8f8a89aa06323c6ad30032f5641d48ae4388",
+      "promptSource": "message"
+    }
+  ]
+}

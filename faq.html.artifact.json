@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "faq.html",
+  "entry": "faq.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-09-10T11:50:10.665Z",
+  "updatedAt": "2026-09-10T11:50:10.665Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

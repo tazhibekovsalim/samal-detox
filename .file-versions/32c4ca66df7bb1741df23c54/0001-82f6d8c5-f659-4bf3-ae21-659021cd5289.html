@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Выездные программы Samal Detox — групповой формат очищения вживую, в вашем городе.">
+  <title>Выездные программы · Samal Detox</title>
+  <style>
+    @font-face{font-family:"Cormorant Garamond Local";src:url("assets/fonts/cormorant-garamond.ttf") format("truetype");font-style:italic;font-weight:400;font-display:swap}
+    @font-face{font-family:"IBM Plex Sans Local";src:url("assets/fonts/ibm-plex-sans.ttf") format("truetype");font-style:normal;font-weight:400 700;font-display:swap}
+
+    :root{
+      --primary:#205A50;
+      --eucalyptus:#87B7AB;
+      --mist:#DDEBE5;
+      --background:#F7F5EF;
+      --sand:#E4D9C8;
+      --ink:#183D38;
+      --radius-card:32px;
+      --radius-pill:999px;
+      --content:min(880px,calc(100% - 40px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--background);color:var(--ink)}
+    body{margin:0;background:var(--background);color:var(--ink);font-family:"IBM Plex Sans Local",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
+    ::selection{background:var(--primary);color:var(--background)}
+    a{color:inherit}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--eucalyptus);outline-offset:4px}
+    .shell{width:var(--content);margin-inline:auto}
+    .skip-link{position:absolute;left:16px;top:-80px;padding:12px 16px;background:var(--primary);color:var(--background);z-index:20}
+    .skip-link:focus{top:16px}
+
+    .site-header{border-bottom:1px solid var(--sand)}
+    .site-header .shell{width:min(1180px,calc(100% - 40px));display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+    .wordmark{font-weight:700;letter-spacing:-.03em;text-decoration:none}
+    .wordmark span{color:var(--primary)}
+    .site-nav{display:flex;align-items:center;gap:18px;font-size:13px}
+    .site-nav a{text-decoration:none}
+    .back-link:hover{text-decoration:underline;text-underline-offset:4px}
+    .nav-cta{padding:10px 16px;border:1px solid var(--primary);border-radius:var(--radius-pill);color:var(--primary);text-decoration:none;transition:background .18s ease,color .18s ease}
+    .nav-cta:hover{background:var(--primary);color:var(--background)}
+
+    h1,h2,h3,p{margin-top:0}
+    h1{max-width:680px;margin-bottom:18px;font-size:clamp(40px,9vw,72px);font-weight:700;line-height:.97;letter-spacing:-.045em}
+    h1 em,h2 em{font-family:"Cormorant Garamond Local",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.03em;color:var(--primary);font-size:1.3em}
+    h2{margin-bottom:18px;font-size:clamp(30px,6vw,44px);line-height:1.02;letter-spacing:-.04em}
+    .eyebrow{margin:0 0 12px;font-size:13px;font-weight:700;color:var(--primary)}
+    .section-intro{max-width:60ch;font-size:17px}
+
+    .page-hero{background:var(--mist);padding:56px 0 48px}
+    .hero-lead{max-width:580px;margin-bottom:8px;font-size:17px;line-height:1.5}
+
+    .section{padding:56px 0;border-top:1px solid var(--sand)}
+    .pricing-section{background:var(--sand)}
+    .intake-section{background:var(--mist)}
+
+    .link-arrow{display:inline-flex;margin-top:20px;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+    .link-arrow:hover{color:var(--primary)}
+
+    .condition-grid{display:grid;gap:16px;margin-top:28px}
+    .condition-card{padding:26px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius-card);-webkit-backdrop-filter:blur(10px) saturate(110%);backdrop-filter:blur(10px) saturate(110%);box-shadow:0 0 0 1px rgba(24,61,56,.06),inset 0 1px 0 rgba(247,245,239,.7),0 14px 26px rgba(24,61,56,.08)}
+    .condition-card h3{margin:0 0 10px;font-size:19px;letter-spacing:-.01em}
+    .condition-card p{margin:0;font-size:14px;line-height:1.5}
+
+    .pricing-note{max-width:60ch;margin-top:14px;font-size:15px;color:var(--primary)}
+
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border:1px solid var(--primary);border-radius:var(--radius-pill);font:inherit;font-weight:700;text-decoration:none;transition:transform .18s ease,background .18s ease,color .18s ease}
+    .button-primary{background:var(--primary);color:var(--background)}
+    .button-primary:hover{background:var(--ink);color:var(--background);transform:translateY(-2px)}
+
+    .final-cta{padding:64px 0;background:var(--primary);color:var(--background);border-top:none}
+    .final-layout{display:grid;gap:22px}
+    .final-cta h2 em{color:var(--eucalyptus)}
+    .final-copy{max-width:440px;margin:0 0 20px;font-size:16px}
+    .final-cta .button-primary{background:var(--background);color:var(--primary);border-color:var(--background)}
+    .final-cta .button-primary:hover{background:var(--eucalyptus);color:var(--ink);border-color:var(--eucalyptus)}
+
+    .site-footer{display:flex;justify-content:space-between;gap:24px;padding:24px 0 34px;font-size:13px;width:min(1180px,calc(100% - 40px));margin-inline:auto}
+    .site-footer p{margin:0}
+    .footer-muted{color:var(--primary)}
+    .telegram-status{position:fixed;right:16px;bottom:16px;z-index:10;max-width:300px;padding:14px 16px;background:var(--ink);color:var(--background);border-radius:var(--radius-pill);box-shadow:0 16px 30px var(--sand);font-size:14px;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+    .telegram-status.is-visible{opacity:1;transform:translateY(0)}
+
+    @media(min-width:760px){
+      .condition-grid{grid-template-columns:repeat(3,1fr)}
+      .final-layout{grid-template-columns:1fr auto;align-items:end}
+      .final-copy{margin-bottom:0}
+    }
+    @media(max-width:480px){
+      .site-nav{gap:10px}
+      .nav-cta{padding:10px 12px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.telegram-status{transition:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">К содержанию</a>
+  <header class="site-header" data-od-id="site-header">
+    <div class="shell">
+      <a class="wordmark" href="index.html" data-od-id="wordmark">Samal <span>Detox</span></a>
+      <nav class="site-nav" aria-label="Основная навигация" data-od-id="main-navigation">
+        <a class="back-link" href="index.html#programs" data-od-id="nav-all-programs">Все программы</a>
+        <a class="nav-cta" href="#telegram" data-od-id="nav-telegram">В Telegram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero" data-od-id="page-hero">
+      <div class="shell">
+        <p class="eyebrow">Выездные программы</p>
+        <h1 data-od-id="page-title">Тот же формат — <em>лично.</em></h1>
+        <p class="hero-lead">3-дневное антипаразитарное очищение, но группой и вживую — Самал проводит его в вашем городе.</p>
+        <a class="link-arrow" href="programs/cleanse-3.html" data-od-id="program-details-link">Что входит в программу ↗</a>
+      </div>
+    </section>
+
+    <section class="section conditions-section" data-od-id="conditions-section">
+      <div class="shell">
+        <h2 data-od-id="conditions-heading">Условия <em>формата.</em></h2>
+        <p class="section-intro">Чтобы провести программу у вас в городе, нужно немного организации на месте.</p>
+        <div class="condition-grid" data-od-id="conditions-grid">
+          <div class="condition-card" data-od-id="condition-group-size"><h3>От 30 человек</h3><p>Группа делится на две подгруппы по 15: одна проходит первые три дня программы, вторая — следующие три.</p></div>
+          <div class="condition-card" data-od-id="condition-venue"><h3>Помещение с двумя санузлами</h3><p>Локальный контакт помогает найти и арендовать подходящую площадку.</p></div>
+          <div class="condition-card" data-od-id="condition-organizer"><h3>Один контакт-организатор</h3><p>Человек в городе, который держит связь с группой и координирует всё на месте.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section" data-od-id="pricing-section">
+      <div class="shell">
+        <h2 data-od-id="pricing-heading">Как считается <em>цена.</em></h2>
+        <p class="section-intro">Цена программы плюс доля организационных расходов — перелёт, аренда, расходные материалы, помощник — делённая на количество участников. Чем больше группа, тем меньше доля на каждого.</p>
+        <p class="pricing-note">Точную стоимость на этой странице не публикуем — курс валют меняется быстрее, чем страница сайта. Обсудим для вашего города в Telegram.</p>
+      </div>
+    </section>
+
+    <section class="section intake-section" data-od-id="intake-section">
+      <div class="shell">
+        <h2 data-od-id="intake-heading">Как проходит <em>приём.</em></h2>
+        <p class="section-intro">Каждый участник приходит в своё время — на человека уходит около 20 минут. Расписание составляется заранее, никто не сидит в очереди.</p>
+      </div>
+    </section>
+
+    <section id="telegram" class="final-cta" data-od-id="final-cta">
+      <div class="shell final-layout">
+        <h2 data-od-id="final-heading">Хотите провести<br><em>у себя?</em></h2>
+        <div>
+          <p class="final-copy">Расскажите о своём городе и количестве желающих — обсудим формат и организацию в Telegram.</p>
+          <a class="button button-primary telegram-link" href="#telegram" data-od-id="final-telegram">Написать в Telegram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-od-id="site-footer"><p>Samal Detox · Самал Булатханкызы</p><p class="footer-muted">Выездные программы · 2026</p></footer>
+  <div class="telegram-status" role="status" aria-live="polite" data-od-id="telegram-status">Ссылка на бот будет добавлена перед запуском</div>
+  <script>
+    (function(){
+      var status=document.querySelector('[data-od-id="telegram-status"]');
+      var links=document.querySelectorAll('.telegram-link');
+      links.forEach(function(link){link.addEventListener('click',function(){status.classList.add('is-visible');window.clearTimeout(status._timer);status._timer=window.setTimeout(function(){status.classList.remove('is-visible')},4200)})});
+    }());
+  </script>
+</body>
+</html>

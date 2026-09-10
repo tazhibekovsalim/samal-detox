@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "reviews.html",
+  "entry": "reviews.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-09-10T11:50:10.667Z",
+  "updatedAt": "2026-09-10T11:50:10.667Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "legal/privacy.html",
+  "currentVersionId": "f22e12ed-83bb-4317-8f91-37c00af36782",
+  "entries": [
+    {
+      "id": "f22e12ed-83bb-4317-8f91-37c00af36782",
+      "fileName": "legal/privacy.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1789041772216,
+      "source": "ai",
+      "prompt": "Continue the remaining unfinished tasks from the previous run. Do not redo completed work. Focus only on these unfinished todos:\n\n1. [in_progress] Реструктурировать главную страницу в light-версию из 6 блоков\n2. [pending] Собрать общий шаблон страниц программ\n3. [pending] Доделать страницы tubazh, cleanse-3, fasting-7-7 и fasting-14-14\n4. [pending] Доделать group-programs.html\n5. [pending] Создать about.html, faq.html и reviews.html\n6. [pending] Создать legal/offer.html, privacy.html и disclaimer.html\n\nBefore making changes, inspect the current project files as needed. Update TodoWrite as you complete each remaining task.",
+      "size": 3473,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-f22e12ed-83bb-4317-8f91-37c00af36782.html",
+      "contentDigest": "df39dac49b6aea761614d5284eb82b1092f0d9d51f5d5d7fcace7811aabb1694",
+      "promptSource": "message"
+    }
+  ]
+}

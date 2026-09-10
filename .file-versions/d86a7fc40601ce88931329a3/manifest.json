@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "homepage-v3.html",
+  "currentVersionId": "1287ae34-6c34-49c7-b1bf-2dffd1ddc5d4",
+  "entries": [
+    {
+      "id": "1287ae34-6c34-49c7-b1bf-2dffd1ddc5d4",
+      "fileName": "homepage-v3.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1789033505975,
+      "source": "manual",
+      "prompt": null,
+      "size": 25517,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-1287ae34-6c34-49c7-b1bf-2dffd1ddc5d4.html",
+      "contentDigest": "a3b2ab68435731f8cf54c7b89c02f9b20acf7d6c17ce358baa19117fced6d55f",
+      "promptSource": "manual"
+    }
+  ]
+}

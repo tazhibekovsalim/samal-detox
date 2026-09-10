@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "homepage-v3.html",
+  "entry": "homepage-v3.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-09-10T09:45:00.000Z",
+  "updatedAt": "2026-09-10T09:45:00.000Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

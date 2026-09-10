@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "fileName": "group-programs.html",
+  "currentVersionId": "ccfc5ea3-33e7-4232-bd46-eb2b178eaf68",
+  "entries": [
+    {
+      "id": "82f6d8c5-f659-4bf3-ae21-659021cd5289",
+      "fileName": "group-programs.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1789039376167,
+      "source": "ai",
+      "prompt": "давай дальше. Следующим этапом пбудем добавлять разные элементы и анимации, иконки и так далее",
+      "size": 11449,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-82f6d8c5-f659-4bf3-ae21-659021cd5289.html",
+      "promptSource": "message",
+      "contentDigest": "4f661b397cdd493acb7832c932ed60ece1d69638f974bc3c0f48481ff4571902"
+    },
+    {
+      "id": "3f8e880f-6344-4ff6-91f4-702f23051ffa",
+      "fileName": "group-programs.html",
+      "version": 2,
+      "label": "Version 2",
+      "createdAt": 1789041772217,
+      "source": "ai",
+      "prompt": "Continue the remaining unfinished tasks from the previous run. Do not redo completed work. Focus only on these unfinished todos:\n\n1. [in_progress] Реструктурировать главную страницу в light-версию из 6 блоков\n2. [pending] Собрать общий шаблон страниц программ\n3. [pending] Доделать страницы tubazh, cleanse-3, fasting-7-7 и fasting-14-14\n4. [pending] Доделать group-programs.html\n5. [pending] Создать about.html, faq.html и reviews.html\n6. [pending] Создать legal/offer.html, privacy.html и disclaimer.html\n\nBefore making changes, inspect the current project files as needed. Update TodoWrite as you complete each remaining task.",
+      "size": 11274,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0002-3f8e880f-6344-4ff6-91f4-702f23051ffa.html",
+      "promptSource": "message",
+      "contentDigest": "7cb84ade5b04c2e6e7be9df6017e39e3f2a6e79786abd4943da55f6f8e7857b4"
+    },
+    {
+      "id": "ccfc5ea3-33e7-4232-bd46-eb2b178eaf68",
+      "fileName": "group-programs.html",
+      "version": 3,
+      "label": "Version 3",
+      "createdAt": 1789056525296,
+      "source": "ai",
+      "prompt": "Apply a global design-system refinement across the existing Samal Detox website. Update only present HTML/CSS files and the existing brief/design-system-brief.md. Do not create pages, change copy, prices, health claims, navigation, links, assets, fonts, palette or interactions.\n\nNew mandatory design-system rule: all cards, panels, notices and content surfaces are matte translucent glass. No opaque white, cream, mist, sand or green card fill may remain unless it is a necessary accessibility fallback. The desired feeling is transparent cleansing mineral glass: background light and texture show through softly, while text remains comfortably readable.\n\nFirst append a concise section to brief/design-system-brief.md named Matte glass surfaces. Record: use only approved palette tokens; light surfaces use color-mix or rgba at roughly 28–46 percent opacity; dark green surfaces may use 62–74 percent opacity; backdrop-filter blur 14–20px; 1px light translucent border; soft inset top highlight; soft low-opacity teal shadow; large rounded corners; never pure white, grey shadow, neon or SaaS glass. For dense text over a photo, increase only its local overlay until text contrast remains strong. Respect prefers-reduced-motion unchanged.\n\nThen apply the rule to every existing site page: index.html, about.html, faq.html, reviews.html, group-programs.html, each programs/*.html and legal pages if they contain cards or panels. Identify and update classes such as program-card, pending-panel, trust-body, expert-profile, related-card, fact, note, faq-item, caution, notice, review-card and any equivalent card or panel. Use each page existing CSS tokens, not new colors. Preserve dark information cards as translucent deep green rather than converting them to light cards.\n\nSpecific readability requirements: all body text must retain reliable contrast; retain --ink or equivalent dark text on light surfaces, and cream text on deep-green surfaces. Do not let background photos or textures sit directly behind paragraphs without a card overlay. Where a page background is flat, the glass rule must still use translucent color and border so it stays visually consistent without appearing washed out.\n\nFor index.html preserve the existing trust-section plant background and its two matte cards; refine their opacities only if needed for contrast. Do not reintroduce photo backgrounds to programs, safety or proof. Preserve hero, water drift, entrance, scroll reveal, SVG seam and CTA glow unchanged.\n\nCheck all changed files for existing CSS variable names and mobile rules. Verify mobile width 390px and desktop width 1440px structurally: no overflow and no loss of contrast. Before completion, search the project to make sure card components use transparent background formulas plus blur, and report which files were updated.",
+      "size": 12066,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0003-ccfc5ea3-33e7-4232-bd46-eb2b178eaf68.html",
+      "contentDigest": "94651dcb7ca562c075eb27e5da7f4d007664c3b895df7e5de027c07b15aed3b3",
+      "promptSource": "message"
+    }
+  ]
+}

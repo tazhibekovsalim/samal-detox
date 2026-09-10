@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "legal/offer.html",
+  "entry": "legal/offer.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-09-10T11:58:53.425Z",
+  "updatedAt": "2026-09-10T11:58:53.425Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "typography-comparison.html",
+  "entry": "typography-comparison.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-09-10T09:08:15.999Z",
+  "updatedAt": "2026-09-10T09:08:15.999Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}
