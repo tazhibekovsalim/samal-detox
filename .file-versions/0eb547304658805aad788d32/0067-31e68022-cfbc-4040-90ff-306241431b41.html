@@ -137,7 +137,7 @@
     .final-cta .button-primary{background:var(--background);color:var(--primary);border-color:var(--background)}
     .final-cta .button-primary:hover{background:var(--eucalyptus);color:var(--ink);border-color:var(--eucalyptus)}
     .site-footer{position:relative;isolation:isolate;display:flex;justify-content:space-between;gap:24px;padding:24px 0 34px;background:var(--ink);color:var(--background);font-size:13px}
-    .site-footer::before{content:"";position:absolute;top:0;bottom:0;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;z-index:-1;background:var(--ink)}
+    .site-footer::before{content:"";position:absolute;inset:0 calc((var(--content) - 100vw) / 2);z-index:-1;background:var(--ink)}
     .site-footer p{margin:0}
     .footer-muted{color:var(--background)}
     .back-to-top{position:fixed;right:24px;bottom:24px;z-index:9;display:grid;place-items:center;width:52px;height:52px;padding:0;border:1px solid var(--eucalyptus);border-radius:50%;background:var(--ink);color:var(--background);box-shadow:0 12px 26px color-mix(in srgb,var(--ink) 22%,transparent);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s ease,visibility .2s ease,transform .2s ease,background .18s ease;cursor:pointer}
@@ -378,13 +378,10 @@
     @media(max-width:700px){.safety-section::before{top:34%;width:100%;border-radius:64px 0 0 0 / 48px 0 0 0;clip-path:ellipse(108% 82% at 100% 100%)}.safety-section::after{top:calc(34% + 18px);right:0;width:calc(100% - 18px);border-right:0;border-radius:48px 0 0 0 / 36px 0 0 0;clip-path:ellipse(108% 82% at 100% 100%)}.safety-section>.shell>.section-heading{align-self:start}.safety-section .pending-panel{padding:28px 22px 30px}.safety-section .link-arrow{margin-left:20px}}
 
     /* ===== Scroll reveal: quiet rib pattern surfacing on the right (safety + proof) =====
-       Anchored to .shell's own right edge (not the viewport), so it sits inside
-       the spare space to the right of the 560px-capped panel/heading — a zone
-       proven clear by measurement, not by hoping for a wide outer margin. Only
-       enabled from 1100px, the same breakpoint that already switches this file
-       to its two-column desktop grid. */
-    .rib-reveal{position:absolute;top:14%;bottom:14%;right:calc((100vw - var(--content)) / 2);z-index:0;display:none;align-items:flex-end;justify-content:space-between;gap:4px;pointer-events:none;overflow:hidden;width:28px}
-    @media(min-width:1100px){.rib-reveal{display:flex}}
+       Width is clamped by the actual gutter outside .shell, so it can only ever
+       occupy space beyond the content column — it is mathematically incapable
+       of overlapping the heading/panel text at any viewport width. */
+    .rib-reveal{position:absolute;top:14%;bottom:14%;right:0;z-index:0;display:flex;align-items:flex-end;justify-content:space-between;pointer-events:none;overflow:hidden;width:clamp(0px,calc((100vw - var(--content)) / 2 - 64px),56px)}
     .rib-reveal__bar{flex:0 0 auto;width:clamp(3px,.3vw,5px);border-radius:4px 4px 0 0;background:var(--ink);opacity:0;transform:scaleY(.15);transform-origin:bottom;transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
     .rib-reveal__bar:nth-child(1){height:32%}
     .rib-reveal__bar:nth-child(2){height:62%;transition-delay:.07s}

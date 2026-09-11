@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "fileName": "index.html",
-  "currentVersionId": "79ad6378-62d6-4dcb-bc2c-d5f1f7e4906a",
+  "currentVersionId": "56cccff9-f021-4794-91ea-5e85a2cac4ac",
   "entries": [
     {
       "id": "09e51b41-e635-41f0-a062-0e1463a11474",
@@ -990,7 +990,67 @@
       "mime": "text/html; charset=utf-8",
       "kind": "html",
       "contentPath": "0065-79ad6378-62d6-4dcb-bc2c-d5f1f7e4906a.html",
-      "contentDigest": "495ebd369618844404c0315ce8dc8867919b5a54dfa3d7ca00103a3385f42aab",
+      "promptSource": "message",
+      "contentDigest": "495ebd369618844404c0315ce8dc8867919b5a54dfa3d7ca00103a3385f42aab"
+    },
+    {
+      "id": "a9912765-5834-41da-b270-34f51a9d06ab",
+      "fileName": "index.html",
+      "version": 66,
+      "label": "Version 66",
+      "createdAt": 1789066119526,
+      "source": "ai",
+      "prompt": "Пожалуйста, задеплой этот сайт последней версии полностью на Гитха и еще перед тем как задеплоить, проверь, в самом низу там есть кнопка отдельная перейти в Телеграм бот в самом низу сайта. В мобильной версии у тебя, когда мы смотрим с компьютером, все нормально отображается. Но с телефона она, блять, налипла нахуй на текст.",
+      "size": 68616,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0066-a9912765-5834-41da-b270-34f51a9d06ab.html",
+      "promptSource": "message",
+      "contentDigest": "9bc95a901741717799ab539303deff32801ab333215c66007280530fdb7e86e0"
+    },
+    {
+      "id": "31e68022-cfbc-4040-90ff-306241431b41",
+      "fileName": "index.html",
+      "version": 67,
+      "label": "Version 67",
+      "createdAt": 1789066758314,
+      "source": "ai",
+      "prompt": "Ты видишь два блока? Сначала безопасность, важные ответы. Я хочу, чтобы ты когда до них начинал их начинал скроллить, у тебя проявлялись и проступали В правой части вертикальные темные паттерны геометрические поищи прикольные варики",
+      "size": 71493,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0067-31e68022-cfbc-4040-90ff-306241431b41.html",
+      "promptSource": "message",
+      "contentDigest": "e66472bd673f4d1f848a77915fc4b5cfb5983b833bf2ac971c679dcd26abeefd"
+    },
+    {
+      "id": "34b49e61-67cf-4b0f-8d76-a12998fd2c48",
+      "fileName": "index.html",
+      "version": 68,
+      "label": "Version 68",
+      "createdAt": 1789066971552,
+      "source": "ai",
+      "prompt": "ничего не появилось",
+      "size": 71668,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0068-34b49e61-67cf-4b0f-8d76-a12998fd2c48.html",
+      "promptSource": "message",
+      "contentDigest": "8347ddfa4bbc73aa7f12d3f0eb3c409183e2fe79db2b4dd5170d9e2a62b6e683"
+    },
+    {
+      "id": "56cccff9-f021-4794-91ea-5e85a2cac4ac",
+      "fileName": "index.html",
+      "version": 69,
+      "label": "Version 69",
+      "createdAt": 1789108733363,
+      "source": "ai",
+      "prompt": "Так, в мобильной версии почему-то нижний футер выходит за рамки вообще всего сайта, и из-за этого ломает он его сайт. Сделаю его так, чтобы он расширялся по ширине всего сайта, а не увеличивает эту ширину.",
+      "size": 71696,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0069-56cccff9-f021-4794-91ea-5e85a2cac4ac.html",
+      "contentDigest": "f28feea5f2d4536259979b77a7673fdf666dc4edd904fc74a68aac152e099c38",
       "promptSource": "message"
     }
   ]
