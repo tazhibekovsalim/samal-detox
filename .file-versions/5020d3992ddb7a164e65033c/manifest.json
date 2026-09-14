@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "fileName": "programs/fasting-7-7.html",
-  "currentVersionId": "1c87edc6-002a-4415-997e-fe6876cfc931",
+  "currentVersionId": "b647d514-7680-445f-ad5a-bedcd04d1a31",
   "entries": [
     {
       "id": "4df6d9d6-3729-4dbb-bc93-85453e626623",
@@ -45,7 +45,22 @@
       "mime": "text/html; charset=utf-8",
       "kind": "html",
       "contentPath": "0003-1c87edc6-002a-4415-997e-fe6876cfc931.html",
-      "contentDigest": "d78b0b2abd416ea9dc3e53f006e918c91682686a0dee8345be5515650263ff8f",
+      "promptSource": "message",
+      "contentDigest": "d78b0b2abd416ea9dc3e53f006e918c91682686a0dee8345be5515650263ff8f"
+    },
+    {
+      "id": "b647d514-7680-445f-ad5a-bedcd04d1a31",
+      "fileName": "programs/fasting-7-7.html",
+      "version": 4,
+      "label": "Version 4",
+      "createdAt": 1789402109719,
+      "source": "ai",
+      "prompt": "Вот в программу голодания 7 7 надо это добавить или исправить то что было если пункты сходятся \n\nГлубинный тюбаж\n7 дней активной чистки на отваре и воде\n6 дней насыщения на свежевыжатых соках \nКлизмы все дни,\nкроме тюбажа\n7 дней выход на растительном питании",
+      "size": 19366,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0004-b647d514-7680-445f-ad5a-bedcd04d1a31.html",
+      "contentDigest": "a30057759000001035e007e286377880f7e1463329032d92bbf55d3488aa4a1a",
       "promptSource": "message"
     }
   ]

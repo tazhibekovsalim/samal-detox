@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "fileName": "programs/fasting-14-14.html",
-  "currentVersionId": "d3c0ac21-a996-4f81-9cd3-28341baaf553",
+  "currentVersionId": "6cfef713-3725-468c-aafd-20fd2e647b85",
   "entries": [
     {
       "id": "d3324861-b60c-45c6-94e1-093d5030c270",
@@ -45,7 +45,22 @@
       "mime": "text/html; charset=utf-8",
       "kind": "html",
       "contentPath": "0003-d3c0ac21-a996-4f81-9cd3-28341baaf553.html",
-      "contentDigest": "ceec6028333a438e2e329c008942596a86387511b10f44c4ad1f1638c8274d95",
+      "promptSource": "message",
+      "contentDigest": "ceec6028333a438e2e329c008942596a86387511b10f44c4ad1f1638c8274d95"
+    },
+    {
+      "id": "6cfef713-3725-468c-aafd-20fd2e647b85",
+      "fileName": "programs/fasting-14-14.html",
+      "version": 4,
+      "label": "Version 4",
+      "createdAt": 1789402382500,
+      "source": "ai",
+      "prompt": "добавь все эти пункты в чего ожидать",
+      "size": 21778,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0004-6cfef713-3725-468c-aafd-20fd2e647b85.html",
+      "contentDigest": "7d613503ff57a854351e7ec1263a7ca1efbce01e14f1efcf6fcd923d1b9a5b1f",
       "promptSource": "message"
     }
   ]

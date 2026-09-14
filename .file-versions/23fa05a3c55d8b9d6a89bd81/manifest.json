@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "index-v17.html",
+  "currentVersionId": "f8905c5d-6b5b-485f-8feb-1452058e5b13",
+  "entries": [
+    {
+      "id": "f8905c5d-6b5b-485f-8feb-1452058e5b13",
+      "fileName": "index-v17.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1789383742396,
+      "source": "ai",
+      "prompt": "ебани свое виденье на первый блок целиком ты знаешь что я хочу все таки поинтереснее дизайн чем сейчас",
+      "size": 72116,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-f8905c5d-6b5b-485f-8feb-1452058e5b13.html",
+      "contentDigest": "3cc0969ab28a328a62efcd24085f3f1c0c0d355e43bc65028bad634a3d8fa7f5",
+      "promptSource": "message"
+    }
+  ]
+}
