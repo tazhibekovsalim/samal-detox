@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="ru">
-<head>
+<html lang="ru"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Глубинный однодневный тюбаж — программа Samal Detox с личным сопровождением Самал Булатханкызы.">
@@ -57,8 +56,10 @@
     .chapter-control:hover{background:var(--primary);color:var(--background);transform:translateY(-2px)}
     .chapter-control:disabled{opacity:.38;cursor:not-allowed;box-shadow:none}
     .chapter-control:focus-visible{outline:3px solid var(--eucalyptus);outline-offset:4px}
-    .chapter-progress{display:flex;align-items:center;gap:6px;min-width:92px;justify-content:center}
-    .chapter-dot{width:7px;height:7px;padding:0;border:1px solid var(--primary);border-radius:50%;background:transparent;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+    .chapter-progress{position:relative;display:flex;align-items:center;justify-content:space-between;width:176px;min-width:176px;min-height:44px;padding:0 11px;cursor:grab;touch-action:none;user-select:none}
+    .chapter-progress::before{content:"";position:absolute;left:12px;right:12px;top:50%;height:1px;background:color-mix(in srgb,var(--primary) 42%,transparent);transform:translateY(-50%)}
+    .chapter-progress.is-dragging{cursor:grabbing}
+    .chapter-dot{position:relative;z-index:1;width:8px;height:8px;padding:0;border:1px solid var(--primary);border-radius:50%;background:var(--background);cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
     .chapter-dot[aria-current="true"]{width:20px;border-radius:999px;background:var(--primary);border-color:var(--primary)}
     .chapter-dot:hover{transform:scale(1.35);background:var(--primary)}
     .chapter-dot:focus-visible{outline:3px solid var(--eucalyptus);outline-offset:4px}
@@ -74,11 +75,14 @@
     .duration-chip{padding:10px 18px;background:color-mix(in srgb,var(--background) 40%,transparent);border:1px solid color-mix(in srgb,var(--background) 72%,transparent);border-radius:var(--radius-pill);font-size:14px;font-weight:700;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 
     .section{padding:56px 0;border-top:1px solid var(--sand)}
-    .symptoms-section{background:var(--background) url("../11.png") center top/cover no-repeat;border-top:0}
-    .included-section{background:var(--sand) url("../assets/backgrounds/tubazh-water-mist-v1.png") center/cover no-repeat}
-    .flow-section{background:var(--mist) url("../assets/backgrounds/tubazh-water-mist-v1.png") center/cover no-repeat}
-    .contraindications-section{background:var(--background) url("../assets/backgrounds/tubazh-botanical-warm-v1.png") center/cover no-repeat}
-    .result-section{background:var(--sand) url("../assets/backgrounds/tubazh-botanical-warm-v1.png") center/cover no-repeat}
+    .symptoms-section{background:var(--background) url("../assets/backgrounds/tubazh-symptoms-morning-v1.jpg") center 54%/cover no-repeat;border-top:0}
+    .included-section{background:var(--mist) url("../assets/backgrounds/tubazh-included-lake-v1.jpg") center 42%/cover no-repeat}
+    .flow-section{background:var(--sand) url("../assets/backgrounds/tubazh-flow-lotus-v1.jpg") center 38%/cover no-repeat}
+    .contraindications-section{background:var(--ink) url("../assets/backgrounds/tubazh-contra-night-lake-v1.jpg") center 44%/cover no-repeat;color:var(--background)}
+    .contraindications-section .notice-card{color:var(--ink)}
+    .contraindications-section .section-intro{color:var(--background)}
+    .contraindications-section .chapter-control:hover{background:color-mix(in srgb,var(--background) 86%,transparent);color:var(--primary);box-shadow:0 10px 22px color-mix(in srgb,var(--ink) 34%,transparent);transform:translateY(-2px)}
+    .result-section{background:var(--sand) url("../assets/backgrounds/tubazh-result-river-v1.jpg") 42% center/cover no-repeat}
 
     .symptoms-section h2{max-width:360px;margin-bottom:10px;font-size:clamp(24px,3.3vw,30px);font-weight:600;line-height:1.1;letter-spacing:-.025em}
     .symptoms-section h2 em{font-size:1.08em}
@@ -94,7 +98,7 @@
     .chip:nth-child(4){grid-column:span 4;margin-left:18px;border-radius:34% 16px 42% 20px / 20px 34% 16px 30%;transform:rotate(1deg)}
     .chip:nth-child(5){grid-column:span 3;margin-top:12px;border-radius:18px 36% 24px 44% / 30% 18px 38% 20px;transform:rotate(-1.7deg)}
     .chip:nth-child(6){grid-column:span 5;border-radius:18px 28px 42% 16px / 24px 18px 34% 30%;transform:rotate(.8deg)}
-    @media (hover:hover) and (pointer:fine){.chip:hover{transform:translateY(-3px) rotate(0deg);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 80%,transparent),0 18px 30px color-mix(in srgb,var(--ink) 14%,transparent)}}
+    @media (hover:hover){.symptoms-section .chip:hover{transform:translateY(-5px) rotate(0deg) scale(1.018);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 84%,transparent),0 20px 32px color-mix(in srgb,var(--ink) 18%,transparent)}}
 
     .split-columns{display:grid;gap:28px;margin-top:8px}
     .split-col h3{margin:0 0 14px;font-size:18px;letter-spacing:-.01em}
@@ -108,6 +112,8 @@
     .flow-number{color:var(--primary);font-weight:700}
     .flow-item p{margin:0;font-size:15px;line-height:1.5}
     .flow-foot{margin-top:20px;font-size:14px;color:var(--primary)}
+    .flow-section h2,.flow-section h2 em,.flow-section .flow-foot{color:var(--ink)}
+    .flow-section .flow-foot{font-weight:700;text-shadow:0 1px 0 color-mix(in srgb,var(--background) 74%,transparent)}
 
      .notice-card{padding:28px;background:var(--background);border:1px solid var(--sand);border-radius:var(--radius-card);box-shadow:0 10px 24px var(--mist)}
     .notice-card ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:10px}
@@ -131,7 +137,7 @@
     .final-cta .button-primary{background:var(--background);color:var(--primary);border-color:var(--background)}
     .final-cta .button-primary:hover{background:var(--eucalyptus);color:var(--ink);border-color:var(--eucalyptus)}
 
-    .related-section{background:var(--mist) url("../assets/backgrounds/tubazh-water-mist-v1.png") center/cover no-repeat}
+    .related-section{background:var(--mist) url("../assets/backgrounds/tubazh-water-mist-v1.png") right bottom/cover no-repeat}
     .related-grid{display:grid;gap:14px;margin:28px 0 24px}
     .related-card{display:block;padding:22px;background:color-mix(in srgb,var(--mist) 40%,transparent);border:1px solid color-mix(in srgb,var(--background) 72%,transparent);border-radius:var(--radius-card);text-decoration:none;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 70%,transparent),0 14px 28px color-mix(in srgb,var(--ink) 10%,transparent);transition:box-shadow .18s ease,transform .18s ease}
     .related-card:hover{box-shadow:0 0 0 1px rgba(24,61,56,.12),inset 0 1px 0 rgba(247,245,239,.8),0 18px 30px rgba(24,61,56,.13);transform:translateY(-2px)}
@@ -160,8 +166,37 @@
      /* ===== Matte glass surfaces ===== */
      .duration-chip,.chip,.notice-card,.related-card{background:color-mix(in srgb,var(--background) 40%,transparent);border-color:color-mix(in srgb,var(--background) 72%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 70%,transparent),0 14px 28px color-mix(in srgb,var(--ink) 10%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
      .related-card{background:color-mix(in srgb,var(--mist) 40%,transparent)}
-     @media(max-width:700px){#main-content{height:calc(100svh - 76px)}.chip-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}.chip{grid-column:span 1!important;margin:0!important;min-height:56px;padding:14px 16px;transform:none!important}.chip:nth-child(6){grid-column:span 2!important}.chapter-nav{bottom:14px;gap:18px}.chapter-control{width:42px;height:42px;font-size:24px}.chapter-progress{min-width:76px;gap:5px}.chapter-dot{width:6px;height:6px}.chapter-dot[aria-current="true"]{width:17px}}
-     @media(max-width:480px){.program-hero,.symptoms-section,.included-section,.flow-section,.contraindications-section,.result-section,.final-cta,.related-section{background-position:center top}.duration-chip,.chip,.notice-card,.related-card{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}}
+     /* ===== Pebble content islands ===== */
+     .split-col,.flow-item,.notice-card,.result-note,.final-copy,.related-card{position:relative;isolation:isolate;background:color-mix(in srgb,var(--background) 48%,transparent);border:1px solid color-mix(in srgb,var(--background) 78%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 78%,transparent),0 14px 28px color-mix(in srgb,var(--ink) 11%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+     .split-col{padding:22px 22px 24px;border-radius:38% 18px 28% 16px / 20px 32% 18px 30%;transform:rotate(-.8deg)}
+     .split-col:nth-child(2){border-radius:16px 34% 18px 38% / 30% 18px 34% 16px;transform:rotate(1deg)}
+     .split-col h3{position:relative;z-index:1}
+     .split-list li{position:relative;z-index:1;padding-left:22px}
+     .flow-list{border-top:0;gap:12px}
+     .flow-item{grid-template-columns:34px 1fr;gap:16px;padding:18px 20px;border:0;border-radius:18px 38% 20px 32% / 30% 18px 34% 16px;transform:rotate(-.7deg)}
+     .flow-item:nth-child(2){border-radius:36% 16px 34% 20px / 18px 30% 16px 32%;transform:rotate(.8deg)}
+     .flow-item:nth-child(3){border-radius:20px 34% 16px 40% / 32% 18px 30% 16px;transform:rotate(-.4deg)}
+     .flow-item + .flow-item{border-top:0}
+     .notice-card{border-radius:34% 16px 38% 22px / 20px 30% 18px 34%;transform:rotate(.5deg)}
+     .notice-card li{padding:12px 16px;background:color-mix(in srgb,var(--background) 36%,transparent);border:1px solid color-mix(in srgb,var(--background) 70%,transparent);border-radius:40% 18px 34% 16px / 18px 30% 16px 28%;}
+     .notice-card li:nth-child(2){border-radius:16px 38% 20px 34% / 28% 16px 32% 18%;transform:rotate(-.6deg)}
+     .notice-card li::before{left:8px;top:20px}
+     .notice-card li{padding-left:30px}
+     .final-copy{border-color:color-mix(in srgb,var(--sand) 78%,var(--background))}
+     .final-cta h2 em{color:var(--sand)}
+     .final-cta .chapter-control{border-color:var(--sand);color:var(--sand);background:color-mix(in srgb,var(--sand) 16%,transparent)}
+     .final-cta .chapter-control:hover{background:var(--sand);color:var(--ink)}
+     .final-cta .button-primary{box-shadow:0 0 0 1px color-mix(in srgb,var(--sand) 40%,transparent),0 0 22px color-mix(in srgb,var(--sand) 62%,transparent),0 10px 28px color-mix(in srgb,var(--ink) 24%,transparent);animation:telegramGlow 2.8s ease-in-out infinite}
+     @keyframes telegramGlow{0%,100%{box-shadow:0 0 0 1px color-mix(in srgb,var(--sand) 32%,transparent),0 0 18px color-mix(in srgb,var(--sand) 48%,transparent),0 10px 28px color-mix(in srgb,var(--ink) 24%,transparent)}50%{box-shadow:0 0 0 1px color-mix(in srgb,var(--sand) 60%,transparent),0 0 34px color-mix(in srgb,var(--sand) 82%,transparent),0 12px 32px color-mix(in srgb,var(--ink) 28%,transparent)}}
+     @media(prefers-reduced-motion:reduce){.final-cta .button-primary{animation:none}}
+     .result-note{width:min(560px,100%);padding:18px 22px;border-radius:18px 38% 20px 34% / 30% 16px 34% 18%;transform:rotate(-.6deg)}
+     .final-copy{padding:18px 20px;border-radius:34% 16px 28% 20px / 18px 30% 20px 32%;transform:rotate(.5deg)}
+     .related-card{border-radius:38% 18px 30% 16px / 20px 32% 18px 28%;transform:rotate(-.6deg)}
+     .related-card:nth-child(2){border-radius:16px 34% 18px 38% / 30% 18px 34% 16px;transform:rotate(.7deg)}
+     @media (hover:hover) and (pointer:fine){.split-col:hover,.flow-item:hover,.notice-card:hover,.result-note:hover,.final-copy:hover,.related-card:hover{transform:translateY(-2px) rotate(0deg)}}
+     @media(max-width:700px){#main-content{height:calc(100svh - 76px)}.chip-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}.chip{grid-column:span 1!important;margin:0!important;min-height:56px;padding:14px 16px;transform:none!important}.chip:nth-child(6){grid-column:span 2!important}.chapter-nav{bottom:14px;gap:18px}.chapter-control{width:42px;height:42px;font-size:24px}.chapter-progress{width:142px;min-width:142px;padding:0 9px}.chapter-progress::before{left:10px;right:10px}.chapter-dot{width:7px;height:7px}.chapter-dot[aria-current="true"]{width:17px}}
+     @media(max-width:700px){.split-col{padding:20px 18px 22px}.flow-item{padding:16px 18px}.notice-card{padding:22px 18px}.result-note,.final-copy{padding:16px 18px}}
+     @media(max-width:480px){.program-hero{background-position:center top}.symptoms-section{background-position:55% center}.included-section{background-position:center 32%}.flow-section{background-position:center 28%}.contraindications-section{background-position:center 34%}.result-section{background-position:40% center}.final-cta{background-position:center top}.related-section{background-position:right bottom}.duration-chip,.chip,.notice-card,.related-card{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}}
   </style>
 </head>
 <body>
@@ -170,7 +205,7 @@
     <div class="shell">
       <a class="wordmark" href="../index.html" data-od-id="wordmark">Samal <span>Detox</span></a>
       <nav class="site-nav" aria-label="Основная навигация" data-od-id="main-navigation">
-        <a class="back-link" href="../index.html#programs" data-od-id="nav-all-programs">Все программы</a>
+        <a class="back-link" href="../index.html" data-od-id="nav-all-programs">На главную</a>
         <a class="nav-cta" href="#telegram" data-od-id="nav-telegram">В Telegram</a>
       </nav>
     </div>
@@ -187,9 +222,10 @@
           <div class="price-main">25 000 ₸<span class="price-alt">5 000 ₽ · 55 $</span></div>
           <div class="duration-chip" data-od-id="duration-chip">1 день</div>
         </div>
-        <div class="chapter-nav" data-od-id="hero-navigation"><button class="chapter-control chapter-back" type="button" disabled aria-label="Предыдущий экран" data-od-id="hero-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Смотреть симптомы" data-story-next="1" data-od-id="hero-next">→</button></div>
+        <div class="chapter-nav" data-od-id="hero-navigation"><button class="chapter-control chapter-back" type="button" disabled="" aria-label="Предыдущий экран" data-od-id="hero-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Смотреть симптомы" data-story-next="1" data-od-id="hero-next">→</button></div>
       </div>
     </section>
+      <footer class="site-footer" data-od-id="site-footer"></footer>
     </section>
 
     <section class="section symptoms-section story-panel" data-story-panel="1" data-od-id="symptoms-section">
@@ -290,8 +326,7 @@
         <a class="link-arrow" href="../index.html#programs" data-od-id="related-all-link">Все программы ↗</a>
         <div class="chapter-nav" data-od-id="related-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад к разговору" data-story-prev="6" data-od-id="related-back">←</button><button class="chapter-control chapter-next" type="button" aria-label="Начать сначала" data-story-next="0" data-od-id="related-next">→</button></div>
       </div>
-      <footer class="site-footer" data-od-id="site-footer"><p>Samal Detox · Самал Булатханкызы</p><p class="footer-muted">Страница программы · 2026</p></footer>
-    </section>
+  </section>
   </main>
 
   <!-- legacy back-to-top control removed: chapter navigation replaces it.
@@ -334,6 +369,46 @@
           progress.className='chapter-progress';
           progress.setAttribute('aria-label','Переход между экранами');
           progress.setAttribute('role','tablist');
+          function closestProgressIndex(clientX){
+            var dots=Array.prototype.slice.call(progress.querySelectorAll('.chapter-dot'));
+            var nearestIndex=0;
+            var nearestDistance=Infinity;
+            dots.forEach(function(dot,index){
+              var dotRect=dot.getBoundingClientRect();
+              var distance=Math.abs(clientX-(dotRect.left+dotRect.width/2));
+              if(distance<nearestDistance){nearestDistance=distance;nearestIndex=index}
+            });
+            return nearestIndex;
+          }
+          function updateProgressFromPointer(clientX){
+            var target=closestProgressIndex(clientX);
+            if(target!==progress._dragIndex){
+              progress._dragIndex=target;
+              updateStory(target);
+            }
+          }
+          progress.addEventListener('pointerdown',function(event){
+            if(event.button!==undefined&&event.button!==0) return;
+            progress.setPointerCapture(event.pointerId);
+            progress.classList.add('is-dragging');
+            progress._dragStartX=event.clientX;
+            progress._dragMoved=false;
+            progress._dragIndex=storyIndex;
+            updateProgressFromPointer(event.clientX);
+          });
+          progress.addEventListener('pointermove',function(event){
+            if(!progress.classList.contains('is-dragging')) return;
+            if(Math.abs(event.clientX-progress._dragStartX)>4) progress._dragMoved=true;
+            updateProgressFromPointer(event.clientX);
+          });
+          function finishProgressDrag(event){
+            if(!progress.classList.contains('is-dragging')) return;
+            if(progress.hasPointerCapture(event.pointerId)) progress.releasePointerCapture(event.pointerId);
+            progress.classList.remove('is-dragging');
+            if(progress._dragMoved){progress._suppressClick=true;window.setTimeout(function(){progress._suppressClick=false},0)}
+          }
+          progress.addEventListener('pointerup',finishProgressDrag);
+          progress.addEventListener('pointercancel',finishProgressDrag);
           storyPanels.forEach(function(panel,index){
             var dot=document.createElement('button');
             dot.type='button';
@@ -342,7 +417,7 @@
             dot.setAttribute('aria-label','Экран '+(index+1)+' из '+storyPanels.length);
             dot.setAttribute('aria-current',index===storyIndex?'true':'false');
             dot.setAttribute('data-story-dot',String(index));
-            dot.addEventListener('click',function(){updateStory(index)});
+            dot.addEventListener('click',function(){if(progress._suppressClick)return;updateStory(index)});
             progress.appendChild(dot);
           });
           nav.insertBefore(progress,nextButton);
@@ -359,18 +434,21 @@
         var touchStartY=0;
         var wheelDelta=0;
         var wheelResetTimer=0;
+        var wheelLocked=false;
         if(mainContent){
           mainContent.addEventListener('touchstart',function(event){var touch=event.touches[0];if(!touch)return;touchStartX=touch.clientX;touchStartY=touch.clientY},{passive:true});
           mainContent.addEventListener('touchend',function(event){var touch=event.changedTouches[0];if(!touch)return;var deltaX=touch.clientX-touchStartX;var deltaY=touch.clientY-touchStartY;if(Math.abs(deltaX)<64||Math.abs(deltaX)<=Math.abs(deltaY)*1.15)return;if(deltaX<0) updateStory(storyIndex+1);else updateStory(storyIndex-1)},{passive:true});
           mainContent.addEventListener('wheel',function(event){
             if(Math.abs(event.deltaY)<Math.abs(event.deltaX)&&Math.abs(event.deltaX)<12) return;
             event.preventDefault();
-            wheelDelta+=Math.abs(event.deltaY)>=Math.abs(event.deltaX)?event.deltaY:event.deltaX;
+            wheelDelta+=(Math.abs(event.deltaY)>=Math.abs(event.deltaX)?event.deltaY:event.deltaX)*.25;
             window.clearTimeout(wheelResetTimer);
-            wheelResetTimer=window.setTimeout(function(){wheelDelta=0},180);
-            if(Math.abs(wheelDelta)<42) return;
+            wheelResetTimer=window.setTimeout(function(){wheelDelta=0},360);
+            if(Math.abs(wheelDelta)<75||wheelLocked) return;
             var direction=wheelDelta>0?1:-1;
             wheelDelta=0;
+            wheelLocked=true;
+            window.setTimeout(function(){wheelLocked=false},480);
             updateStory(storyIndex+direction);
           },{passive:false});
         }
@@ -379,5 +457,6 @@
       }
     }());
   </script>
-</body>
-</html>
+
+
+</body></html>

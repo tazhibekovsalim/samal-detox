@@ -1,8 +1,8 @@
 {
   "version": 1,
   "kind": "html",
-  "title": "programs/tubazh.html",
-  "entry": "programs/tubazh.html",
+  "title": "programs/cleanse-3-v2.html",
+  "entry": "programs/cleanse-3-v2.html",
   "renderer": "html",
   "status": "complete",
   "exports": [
@@ -10,8 +10,8 @@
     "pdf",
     "zip"
   ],
-  "createdAt": "2026-09-10T11:06:55.258Z",
-  "updatedAt": "2026-09-14T15:27:38.744Z",
+  "createdAt": "2026-09-14T15:58:10.075Z",
+  "updatedAt": "2026-09-14T15:58:10.075Z",
   "metadata": {
     "inferred": true,
     "reconciled": true
