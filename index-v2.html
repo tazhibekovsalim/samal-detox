@@ -6,9 +6,9 @@
   <title>Samal Detox — спокойное сопровождение</title>
   <script>document.documentElement.classList.add('js-anim')</script>
   <style>
-    @font-face{font-family:"Cormorant Garamond Local";src:url("assets/fonts/cormorant-garamond.ttf") format("truetype");font-style:italic;font-weight:400;font-display:swap}
-    @font-face{font-family:"IBM Plex Sans Local";src:url("assets/fonts/ibm-plex-sans.ttf") format("truetype");font-style:normal;font-weight:400 700;font-display:swap}
-    @font-face{font-family:"Lora Local";src:url("assets/fonts/lora-italic.ttf") format("truetype");font-style:italic;font-weight:400;font-display:swap}
+    @font-face{font-family:"Cormorant Garamond Local";src:url("assets/fonts/cormorant-garamond.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
+    @font-face{font-family:"IBM Plex Sans Local";src:url("assets/fonts/ibm-plex-sans.woff2") format("woff2");font-style:normal;font-weight:400 700;font-display:swap}
+    @font-face{font-family:"Lora Local";src:url("assets/fonts/lora-italic.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
 
     :root{
       --primary:#205A50;
@@ -41,7 +41,7 @@
     .nav-cta{padding:10px 16px;border:1px solid var(--primary);border-radius:var(--radius-pill);color:var(--primary);transition:background .18s ease,color .18s ease}
     .nav-cta:hover{background:var(--primary);color:var(--background)}
 
-     .hero-bleed{position:relative;min-height:100vh;overflow:hidden;background-color:var(--background);background-image:url("assets/backgrounds/quiet-water-light-v1.png");background-size:cover;background-position:center}
+     .hero-bleed{position:relative;min-height:100vh;overflow:hidden;background-color:var(--background);background-image:url("assets/backgrounds/quiet-water-light-v1.webp");background-size:cover;background-position:center}
      .hero-bleed::after{content:"";position:absolute;inset:0;background:var(--mist);opacity:.28;pointer-events:none}
     .hero{position:relative;z-index:1;display:grid;gap:28px;padding:44px 0 72px;overflow:visible}
     .hero-copy{position:relative;z-index:2;max-width:640px;padding:24px 20px 26px;margin-inline:-20px}
@@ -77,7 +77,7 @@
     .link-arrow{display:inline-flex;margin-top:20px;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
     .link-arrow:hover{color:var(--primary)}
 
-    .trust-section{position:relative;isolation:isolate;overflow:hidden;background-color:var(--mist);background-image:url("assets/backgrounds/quiet-water-trust-v1.png");background-size:cover;background-position:center}
+    .trust-section{position:relative;isolation:isolate;overflow:hidden;background-color:var(--mist);background-image:url("assets/backgrounds/quiet-water-trust-v1.webp");background-size:cover;background-position:center}
     .trust-body{display:grid;gap:20px}
     .expert-profile{display:flex;align-items:center;gap:16px;padding-top:18px;border-top:1px solid var(--eucalyptus)}
     .expert-initial{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--primary);color:var(--background);font-family:"Cormorant Garamond Local",Georgia,serif;font-style:italic;font-size:28px}
@@ -242,7 +242,7 @@
       75%{transform:translate3d(-12px,-6px,0)}
       100%{transform:translate3d(0,0,0)}
     }
-    .hero-water-drift{position:absolute;inset:-20px;z-index:0;background-image:url("assets/backgrounds/quiet-water-light-v1.png");background-size:cover;background-position:center;opacity:.14;pointer-events:none;animation:water-drift 20s ease-in-out infinite}
+    .hero-water-drift{position:absolute;inset:-20px;z-index:0;background-image:url("assets/backgrounds/quiet-water-light-v1.webp");background-size:cover;background-position:center;opacity:.14;pointer-events:none;animation:water-drift 20s ease-in-out infinite}
 
     /* ===== Motion: first-screen entrance ===== */
     @keyframes fade-up-nav{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}
@@ -355,7 +355,7 @@
         <p class="hero-note">В боте — общение, ответы на вопросы и удобная оплата.</p>
       </div>
       <div class="hero-visual" data-od-id="hero-portrait-wrap">
-        <div class="portrait-frame"><img src="assets/portraits/samal-quiet-water-v1.jpg" width="736" height="920" alt="Самал Булатханкызы, эксперт Samal Detox"></div>
+        <div class="portrait-frame"><img src="assets/portraits/samal-quiet-water-v1.webp" width="736" height="920" alt="Самал Булатханкызы, эксперт Samal Detox"></div>
         <div class="hero-stamp"><strong>Личное сопровождение</strong><p>Самал рядом на каждом этапе программы.</p></div>
         <p class="hero-quote">Я рядом на каждом этапе программы.</p>
       </div>
