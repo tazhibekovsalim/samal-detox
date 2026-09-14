@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "programs/cleanse-3-v2.html",
+  "currentVersionId": "0e4f8882-ada0-4762-bee5-4f1211e92ce1",
+  "entries": [
+    {
+      "id": "0e4f8882-ada0-4762-bee5-4f1211e92ce1",
+      "fileName": "programs/cleanse-3-v2.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1789401745989,
+      "source": "ai",
+      "prompt": "сделай ОДИН В ОДИН только с нужной инфой в тексте курс 3дневного чето-там голодания прям все задние фоны все кирпичики цвета механики кбаш короч\\ъ",
+      "size": 22882,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-0e4f8882-ada0-4762-bee5-4f1211e92ce1.html",
+      "contentDigest": "8bce8c53bd884b87e82562af59d30ed87209eca5b6db93bdd9c9feda7b0353ea",
+      "promptSource": "message"
+    }
+  ]
+}
