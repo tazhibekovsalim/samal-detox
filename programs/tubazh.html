@@ -22,7 +22,7 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--background);color:var(--ink)}
-    body{margin:0;background:var(--background);color:var(--ink);font-family:"IBM Plex Sans Local",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
+    body{margin:0;overflow:hidden;background:var(--background);color:var(--ink);font-family:"IBM Plex Sans Local",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
     ::selection{background:var(--primary);color:var(--background)}
     a{color:inherit}
     a:focus-visible,button:focus-visible{outline:3px solid var(--eucalyptus);outline-offset:4px}
@@ -47,7 +47,26 @@
     .eyebrow{margin:0 0 12px;font-size:13px;font-weight:700;color:var(--primary)}
     .section-intro{max-width:60ch;font-size:17px}
 
-    .program-hero{background:var(--mist);padding:56px 0 48px}
+    #main-content{position:relative;height:calc(100svh - 76px);overflow:hidden;touch-action:pan-y}
+    .story-panel{position:absolute;inset:0;width:100%;height:100%;padding-bottom:92px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;transform:translateX(100%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .48s cubic-bezier(.23,1,.32,1),opacity .25s ease,visibility 0s linear .48s;will-change:transform}
+    .story-panel.is-before{transform:translateX(-100%);opacity:.72;visibility:visible}
+    .story-panel.is-after{transform:translateX(100%);opacity:0;visibility:visible}
+    .story-panel.is-active{transform:translateX(0);opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+    .chapter-nav{position:absolute;left:50%;bottom:22px;z-index:4;display:flex;align-items:center;justify-content:center;gap:24px;width:max-content;margin:0;padding:6px 10px;transform:translateX(-50%)}
+    .chapter-control{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--primary);border-radius:50%;background:color-mix(in srgb,var(--background) 80%,transparent);color:var(--primary);font-family:inherit;font-size:25px;font-weight:700;line-height:1;cursor:pointer;box-shadow:0 6px 16px color-mix(in srgb,var(--ink) 15%,transparent);transition:background .18s ease,color .18s ease,transform .18s cubic-bezier(.23,1,.32,1)}
+    .chapter-control:hover{background:var(--primary);color:var(--background);transform:translateY(-2px)}
+    .chapter-control:disabled{opacity:.38;cursor:not-allowed;box-shadow:none}
+    .chapter-control:focus-visible{outline:3px solid var(--eucalyptus);outline-offset:4px}
+    .chapter-progress{display:flex;align-items:center;gap:6px;min-width:92px;justify-content:center}
+    .chapter-dot{width:7px;height:7px;padding:0;border:1px solid var(--primary);border-radius:50%;background:transparent;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+    .chapter-dot[aria-current="true"]{width:20px;border-radius:999px;background:var(--primary);border-color:var(--primary)}
+    .chapter-dot:hover{transform:scale(1.35);background:var(--primary)}
+    .chapter-dot:focus-visible{outline:3px solid var(--eucalyptus);outline-offset:4px}
+    .final-cta .chapter-control{border-color:var(--eucalyptus);color:var(--background);background:color-mix(in srgb,var(--background) 18%,transparent)}
+    .final-cta .chapter-control:hover{background:var(--eucalyptus);color:var(--ink)}
+
+    .opening-scene{background:var(--background) url("../11.png") center top/cover no-repeat}
+    .program-hero{background:transparent;padding:56px 0 48px}
     .hero-lead{max-width:560px;margin-bottom:28px;font-size:17px;line-height:1.5}
     .price-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
     .price-main{font-size:28px;font-weight:700;line-height:1.2}
@@ -55,12 +74,27 @@
     .duration-chip{padding:10px 18px;background:color-mix(in srgb,var(--background) 40%,transparent);border:1px solid color-mix(in srgb,var(--background) 72%,transparent);border-radius:var(--radius-pill);font-size:14px;font-weight:700;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 
     .section{padding:56px 0;border-top:1px solid var(--sand)}
-    .included-section{background:var(--sand)}
-    .flow-section{background:var(--mist)}
-    .result-section{background:var(--sand)}
+    .symptoms-section{background:var(--background) url("../11.png") center top/cover no-repeat;border-top:0}
+    .included-section{background:var(--sand) url("../assets/backgrounds/tubazh-water-mist-v1.png") center/cover no-repeat}
+    .flow-section{background:var(--mist) url("../assets/backgrounds/tubazh-water-mist-v1.png") center/cover no-repeat}
+    .contraindications-section{background:var(--background) url("../assets/backgrounds/tubazh-botanical-warm-v1.png") center/cover no-repeat}
+    .result-section{background:var(--sand) url("../assets/backgrounds/tubazh-botanical-warm-v1.png") center/cover no-repeat}
 
-    .chip-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .chip{padding:10px 18px;background:color-mix(in srgb,var(--background) 40%,transparent);border:1px solid color-mix(in srgb,var(--background) 72%,transparent);border-radius:var(--radius-pill);font-size:14px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 70%,transparent),0 10px 20px color-mix(in srgb,var(--ink) 8%,transparent)}
+    .symptoms-section h2{max-width:360px;margin-bottom:10px;font-size:clamp(24px,3.3vw,30px);font-weight:600;line-height:1.1;letter-spacing:-.025em}
+    .symptoms-section h2 em{font-size:1.08em}
+    .symptoms-intro{position:relative;isolation:isolate;width:min(640px,100%);margin:0 auto;text-align:center;padding:24px 30px 26px}
+    .symptoms-intro::before{content:"";position:absolute;inset:0;z-index:-1;border:1px solid color-mix(in srgb,var(--background) 76%,transparent);border-radius:50% 18px 42% 20px / 28px 34% 22px 30%;background:color-mix(in srgb,var(--background) 50%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 82%,transparent),0 16px 30px color-mix(in srgb,var(--ink) 9%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+    .symptoms-intro::after{content:"";display:block;width:84px;height:1px;margin:18px auto 0;background:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb,var(--primary) 10%,transparent)}
+    .symptoms-intro .section-intro{max-width:52ch;margin:0 auto;font-size:16px}
+    .chip-list{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;margin-top:34px;max-width:900px;align-items:stretch}
+    .chip{display:flex;align-items:center;min-width:0;min-height:58px;padding:16px 20px;background:color-mix(in srgb,var(--background) 42%,transparent);border:1px solid color-mix(in srgb,var(--background) 76%,transparent);border-radius:30px 12px 26px 16px / 18px 28px 14px 24px;font-size:14px;line-height:1.25;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 74%,transparent),0 14px 26px color-mix(in srgb,var(--ink) 10%,transparent);transition:transform .18s cubic-bezier(.23,1,.32,1),box-shadow .18s ease}
+    .chip:nth-child(1){grid-column:span 5;border-radius:42% 18px 34% 22px / 18px 30% 18px 32%;transform:rotate(-1.2deg)}
+    .chip:nth-child(2){grid-column:span 4;margin-top:18px;border-radius:16px 38% 20px 34% / 28% 16px 34% 18px;transform:rotate(1.4deg)}
+    .chip:nth-child(3){grid-column:span 3;border-radius:22px 44% 18px 38% / 38% 20px 34% 18px;transform:rotate(-2deg)}
+    .chip:nth-child(4){grid-column:span 4;margin-left:18px;border-radius:34% 16px 42% 20px / 20px 34% 16px 30%;transform:rotate(1deg)}
+    .chip:nth-child(5){grid-column:span 3;margin-top:12px;border-radius:18px 36% 24px 44% / 30% 18px 38% 20px;transform:rotate(-1.7deg)}
+    .chip:nth-child(6){grid-column:span 5;border-radius:18px 28px 42% 16px / 24px 18px 34% 30%;transform:rotate(.8deg)}
+    @media (hover:hover) and (pointer:fine){.chip:hover{transform:translateY(-3px) rotate(0deg);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 80%,transparent),0 18px 30px color-mix(in srgb,var(--ink) 14%,transparent)}}
 
     .split-columns{display:grid;gap:28px;margin-top:8px}
     .split-col h3{margin:0 0 14px;font-size:18px;letter-spacing:-.01em}
@@ -90,13 +124,14 @@
     .link-arrow{display:inline-flex;margin-top:20px;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
     .link-arrow:hover{color:var(--primary)}
 
-    .final-cta{padding:64px 0;background:var(--primary);color:var(--background);border-top:none}
+    .final-cta{padding:64px 0;background:var(--primary) url("../assets/backgrounds/tubazh-deep-garden-v1.png") center/cover no-repeat;color:var(--background);border-top:none}
     .final-layout{display:grid;gap:22px}
     .final-cta h2 em{color:var(--eucalyptus)}
     .final-copy{max-width:440px;margin:0 0 20px;font-size:16px}
     .final-cta .button-primary{background:var(--background);color:var(--primary);border-color:var(--background)}
     .final-cta .button-primary:hover{background:var(--eucalyptus);color:var(--ink);border-color:var(--eucalyptus)}
 
+    .related-section{background:var(--mist) url("../assets/backgrounds/tubazh-water-mist-v1.png") center/cover no-repeat}
     .related-grid{display:grid;gap:14px;margin:28px 0 24px}
     .related-card{display:block;padding:22px;background:color-mix(in srgb,var(--mist) 40%,transparent);border:1px solid color-mix(in srgb,var(--background) 72%,transparent);border-radius:var(--radius-card);text-decoration:none;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 70%,transparent),0 14px 28px color-mix(in srgb,var(--ink) 10%,transparent);transition:box-shadow .18s ease,transform .18s ease}
     .related-card:hover{box-shadow:0 0 0 1px rgba(24,61,56,.12),inset 0 1px 0 rgba(247,245,239,.8),0 18px 30px rgba(24,61,56,.13);transform:translateY(-2px)}
@@ -120,12 +155,13 @@
       .site-nav{gap:10px}
       .nav-cta{padding:10px 12px}
     }
-     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.related-card,.telegram-status{transition:none}}
+     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.related-card,.telegram-status,.chapter-next,.chapter-back,.chapter-control,.chapter-dot{transition:none}.story-panel{transition:none}}
      .duration-chip,.chip,.related-card,.notice-card{background:var(--background);border-color:var(--sand);box-shadow:0 10px 24px var(--mist);-webkit-backdrop-filter:none;backdrop-filter:none}
      /* ===== Matte glass surfaces ===== */
      .duration-chip,.chip,.notice-card,.related-card{background:color-mix(in srgb,var(--background) 40%,transparent);border-color:color-mix(in srgb,var(--background) 72%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,var(--background) 70%,transparent),0 14px 28px color-mix(in srgb,var(--ink) 10%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
      .related-card{background:color-mix(in srgb,var(--mist) 40%,transparent)}
-     @media(max-width:480px){.duration-chip,.chip,.notice-card,.related-card{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}}
+     @media(max-width:700px){#main-content{height:calc(100svh - 76px)}.chip-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}.chip{grid-column:span 1!important;margin:0!important;min-height:56px;padding:14px 16px;transform:none!important}.chip:nth-child(6){grid-column:span 2!important}.chapter-nav{bottom:14px;gap:18px}.chapter-control{width:42px;height:42px;font-size:24px}.chapter-progress{min-width:76px;gap:5px}.chapter-dot{width:6px;height:6px}.chapter-dot[aria-current="true"]{width:17px}}
+     @media(max-width:480px){.program-hero,.symptoms-section,.included-section,.flow-section,.contraindications-section,.result-section,.final-cta,.related-section{background-position:center top}.duration-chip,.chip,.notice-card,.related-card{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}}
   </style>
 </head>
 <body>
@@ -141,6 +177,7 @@
   </header>
 
   <main id="main-content">
+    <section class="story-panel story-panel--hero opening-scene is-active" data-story-panel="0" data-od-id="program-hero-panel">
     <section class="program-hero" data-od-id="program-hero">
       <div class="shell">
         <p class="eyebrow">Программа</p>
@@ -150,25 +187,30 @@
           <div class="price-main">25 000 ₸<span class="price-alt">5 000 ₽ · 55 $</span></div>
           <div class="duration-chip" data-od-id="duration-chip">1 день</div>
         </div>
+        <div class="chapter-nav" data-od-id="hero-navigation"><button class="chapter-control chapter-back" type="button" disabled aria-label="Предыдущий экран" data-od-id="hero-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Смотреть симптомы" data-story-next="1" data-od-id="hero-next">→</button></div>
       </div>
     </section>
+    </section>
 
-    <section class="section symptoms-section" data-od-id="symptoms-section">
+    <section class="section symptoms-section story-panel" data-story-panel="1" data-od-id="symptoms-section">
       <div class="shell">
-        <h2 data-od-id="symptoms-heading">С какими симптомами <em>приходят.</em></h2>
-        <p class="section-intro">Если узнаёте себя хотя бы в части списка — тюбаж обычно подходит как мягкий разгрузочный курс.</p>
-        <div class="chip-list" data-od-id="symptoms-list">
-          <span class="chip">Вздутие после еды</span>
-          <span class="chip">Тяжесть в правом боку</span>
-          <span class="chip">Запоры</span>
-          <span class="chip">Горечь во рту</span>
-          <span class="chip">Неприятный запах</span>
-          <span class="chip">Кожа — акне, сухость, раздражения</span>
+        <div class="symptoms-intro" data-od-id="symptoms-intro">
+          <h2 data-od-id="symptoms-heading">С какими симптомами <em>приходят.</em></h2>
+          <p class="section-intro">Если узнаёте себя хотя бы в части списка — тюбаж обычно подходит как мягкий разгрузочный курс.</p>
         </div>
+        <div class="chip-list" data-od-id="symptoms-list">
+          <span class="chip" data-od-id="symptom-bloating">Вздутие после еды</span>
+          <span class="chip" data-od-id="symptom-heaviness">Тяжесть в правом боку</span>
+          <span class="chip" data-od-id="symptom-constipation">Запоры</span>
+          <span class="chip" data-od-id="symptom-bitterness">Горечь во рту</span>
+          <span class="chip" data-od-id="symptom-odor">Неприятный запах</span>
+          <span class="chip" data-od-id="symptom-skin">Кожа — акне, сухость, раздражения</span>
+        </div>
+        <div class="chapter-nav" data-od-id="symptoms-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад" data-story-prev="0" data-od-id="symptoms-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Что входит" data-story-next="2" data-od-id="symptoms-next">→</button></div>
       </div>
     </section>
 
-    <section class="section included-section" data-od-id="included-section">
+    <section class="section included-section story-panel" data-story-panel="2" data-od-id="included-section">
       <div class="shell">
         <h2 data-od-id="included-heading">Что <em>входит.</em></h2>
         <div class="split-columns">
@@ -186,10 +228,11 @@
             </ul>
           </div>
         </div>
+        <div class="chapter-nav" data-od-id="included-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад" data-story-prev="1" data-od-id="included-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Как проходит день" data-story-next="3" data-od-id="included-next">→</button></div>
       </div>
     </section>
 
-    <section class="section flow-section" data-od-id="flow-section">
+    <section class="section flow-section story-panel" data-story-panel="3" data-od-id="flow-section">
       <div class="shell">
         <h2 data-od-id="flow-heading">Как проходит <em>день.</em></h2>
         <ol class="flow-list" data-od-id="flow-list">
@@ -198,10 +241,11 @@
           <li class="flow-item"><span class="flow-number">3</span><p>Снятие тяжести и вздутия</p></li>
         </ol>
         <p class="flow-foot">Курс можно повторять — оптимально раз в месяц.</p>
+        <div class="chapter-nav" data-od-id="flow-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад" data-story-prev="2" data-od-id="flow-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Проверить противопоказания" data-story-next="4" data-od-id="flow-next">→</button></div>
       </div>
     </section>
 
-    <section class="section contraindications-section" data-od-id="contraindications-section">
+    <section class="section contraindications-section story-panel" data-story-panel="4" data-od-id="contraindications-section">
       <div class="shell">
         <h2 data-od-id="contraindications-heading">Противопоказания</h2>
         <p class="section-intro">Важная часть, а не формальность — прочитайте перед записью.</p>
@@ -212,28 +256,31 @@
           </ul>
           <p class="notice-foot">Если сомневаетесь, подходит ли вам тюбаж — уточните у Самал в Telegram-боте до записи.</p>
         </div>
+        <div class="chapter-nav" data-od-id="contraindications-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад" data-story-prev="3" data-od-id="contraindications-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Чего ожидать" data-story-next="5" data-od-id="contraindications-next">→</button></div>
       </div>
     </section>
 
-    <section class="section result-section" data-od-id="result-section">
+    <section class="section result-section story-panel" data-story-panel="5" data-od-id="result-section">
       <div class="shell">
         <h2 data-od-id="result-heading">Чего <em>ожидать.</em></h2>
         <p class="section-intro">По опыту клиентов: снижается тяжесть и вздутие, уходят отёки, меняется цвет лица.</p>
         <p class="result-note">Отвес — ориентировочно до <strong>2,5 кг</strong>, у каждого индивидуально. Результат не гарантирован и зависит от особенностей организма.</p>
+        <div class="chapter-nav" data-od-id="result-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад" data-story-prev="4" data-od-id="result-prev">←</button><button class="chapter-control chapter-next" type="button" aria-label="Обсудить с Самал" data-story-next="6" data-od-id="result-next">→</button></div>
       </div>
     </section>
 
-    <section id="telegram" class="final-cta" data-od-id="final-cta">
+    <section id="telegram" class="final-cta story-panel" data-story-panel="6" data-od-id="final-cta">
       <div class="shell final-layout">
         <h2 data-od-id="final-heading">Готовы<br><em>начать?</em></h2>
         <div>
           <p class="final-copy">Обсудите тюбаж с Самал в Telegram — дата, чек-лист противопоказаний и оплата там же.</p>
           <a class="button button-primary telegram-link" href="#telegram" data-od-id="final-telegram">Обсудить в Telegram-боте</a>
+          <div class="chapter-nav" data-od-id="final-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад к результату" data-story-prev="5" data-od-id="final-back">←</button><button class="chapter-control chapter-next" type="button" aria-label="Другие форматы" data-story-next="7" data-od-id="final-next">→</button></div>
         </div>
       </div>
     </section>
 
-    <section class="section related-section" data-od-id="related-section">
+    <section class="section related-section story-panel" data-story-panel="7" data-od-id="related-section">
       <div class="shell">
         <h2 data-od-id="related-heading">Другие <em>форматы.</em></h2>
         <div class="related-grid">
@@ -241,17 +288,95 @@
           <a class="related-card" href="fasting-7-7.html" data-od-id="related-fasting-7"><span class="related-duration">21 день</span><h3>Голодание 7/7</h3><span class="related-price">120 000 ₸</span></a>
         </div>
         <a class="link-arrow" href="../index.html#programs" data-od-id="related-all-link">Все программы ↗</a>
+        <div class="chapter-nav" data-od-id="related-navigation"><button class="chapter-control chapter-back" type="button" aria-label="Назад к разговору" data-story-prev="6" data-od-id="related-back">←</button><button class="chapter-control chapter-next" type="button" aria-label="Начать сначала" data-story-next="0" data-od-id="related-next">→</button></div>
       </div>
+      <footer class="site-footer" data-od-id="site-footer"><p>Samal Detox · Самал Булатханкызы</p><p class="footer-muted">Страница программы · 2026</p></footer>
     </section>
   </main>
 
-  <footer class="site-footer" data-od-id="site-footer"><p>Samal Detox · Самал Булатханкызы</p><p class="footer-muted">Страница программы · 2026</p></footer>
+  <!-- legacy back-to-top control removed: chapter navigation replaces it.
+    <svg viewBox="0 0 28 28" aria-hidden="true"><path class="ornament-line" d="M4.5 20c1.6-1.8 2.1-3.9 1.5-6.2M23.5 20c-1.6-1.8-2.1-3.9-1.5-6.2M4.5 20c2 .3 3.1-.2 4-1.5M23.5 20c-2 .3-3.1-.2-4-1.5M8 24c1.6-1 2.7-1 4.2 0M20 24c-1.6-1-2.7-1-4.2 0"></path><circle class="ornament-dot" cx="5.8" cy="12.8" r=".75"></circle><circle class="ornament-dot" cx="22.2" cy="12.8" r=".75"></circle><path d="M14 23V6M8.5 11.5 14 6l5.5 5.5"></path><path class="flower-petal" d="M14 6c-2.9-2.3-1.5-4.7 0-4.7s2.9 2.4 0 4.7Z"></path><path class="flower-petal" d="M14 6c2.3-2.9 4.7-1.5 4.7 0S16.3 8.9 14 6Z"></path><path class="flower-petal" d="M14 6c-2.3 2.9-4.7 1.5-4.7 0S11.7 3.1 14 6Z"></path><circle cx="14" cy="6" r="1.2" fill="var(--background)" stroke="none"></circle></svg>
+  -->
   <div class="telegram-status" role="status" aria-live="polite" data-od-id="telegram-status">Переход в Telegram будет доступен после подключения бота.</div>
   <script>
     (function(){
       var status=document.querySelector('[data-od-id="telegram-status"]');
       var links=document.querySelectorAll('.telegram-link');
       links.forEach(function(link){link.addEventListener('click',function(){status.classList.add('is-visible');window.clearTimeout(status._timer);status._timer=window.setTimeout(function(){status.classList.remove('is-visible')},4200)})});
+      var storyPanels=Array.prototype.slice.call(document.querySelectorAll('[data-story-panel]'));
+      var storyIndex=0;
+      storyPanels.forEach(function(panel,index){if(panel.classList.contains('is-active')) storyIndex=index;panel.setAttribute('tabindex','-1')});
+      try{var savedStoryIndex=Number(window.localStorage.getItem('tubazh-story-panel'));if(savedStoryIndex>=0&&savedStoryIndex<storyPanels.length&&Math.floor(savedStoryIndex)===savedStoryIndex) storyIndex=savedStoryIndex}catch(error){}
+      function updateStory(nextIndex){
+        if(!storyPanels.length) return;
+        var next=Math.max(0,Math.min(storyPanels.length-1,nextIndex));
+        if(next===storyIndex) return;
+        storyIndex=next;
+        storyPanels.forEach(function(panel,index){
+          panel.classList.remove('is-before','is-active','is-after');
+          panel.setAttribute('aria-hidden',index===storyIndex?'false':'true');
+          panel.inert=index!==storyIndex;
+          if(index===storyIndex) panel.classList.add('is-active');
+          else if(index<storyIndex) panel.classList.add('is-before');
+          else panel.classList.add('is-after');
+        });
+        storyPanels[storyIndex].scrollTop=0;
+        document.querySelectorAll('.chapter-dot').forEach(function(dot){dot.setAttribute('aria-current',dot.getAttribute('data-story-dot')===String(storyIndex)?'true':'false')});
+        try{window.localStorage.setItem('tubazh-story-panel',String(storyIndex))}catch(error){}
+        if(typeof updateBackToTop==='function') updateBackToTop();
+      }
+      if(storyPanels.length){
+        storyPanels.forEach(function(panel,index){panel.classList.remove('is-before','is-active','is-after');panel.setAttribute('aria-hidden',index===storyIndex?'false':'true');panel.inert=index!==storyIndex;if(index===storyIndex) panel.classList.add('is-active');else if(index<storyIndex) panel.classList.add('is-before');else panel.classList.add('is-after')});
+        document.querySelectorAll('.chapter-nav').forEach(function(nav){
+          var nextButton=nav.querySelector('[data-story-next]');
+          if(!nextButton||nav.querySelector('.chapter-progress')) return;
+          var progress=document.createElement('div');
+          progress.className='chapter-progress';
+          progress.setAttribute('aria-label','Переход между экранами');
+          progress.setAttribute('role','tablist');
+          storyPanels.forEach(function(panel,index){
+            var dot=document.createElement('button');
+            dot.type='button';
+            dot.className='chapter-dot';
+            dot.setAttribute('role','tab');
+            dot.setAttribute('aria-label','Экран '+(index+1)+' из '+storyPanels.length);
+            dot.setAttribute('aria-current',index===storyIndex?'true':'false');
+            dot.setAttribute('data-story-dot',String(index));
+            dot.addEventListener('click',function(){updateStory(index)});
+            progress.appendChild(dot);
+          });
+          nav.insertBefore(progress,nextButton);
+        });
+        document.querySelectorAll('[data-story-next]').forEach(function(button){button.addEventListener('click',function(){updateStory(Number(button.getAttribute('data-story-next')))});});
+        document.querySelectorAll('[data-story-prev]').forEach(function(button){button.addEventListener('click',function(){updateStory(Number(button.getAttribute('data-story-prev')))});});
+        document.addEventListener('keydown',function(event){
+          if(['INPUT','TEXTAREA','SELECT'].indexOf(document.activeElement && document.activeElement.tagName)>-1) return;
+          if(event.key==='ArrowRight'||event.key==='ArrowDown'){event.preventDefault();updateStory(storyIndex+1)}
+          if(event.key==='ArrowLeft'||event.key==='ArrowUp'){event.preventDefault();updateStory(storyIndex-1)}
+        });
+        var mainContent=document.querySelector('#main-content');
+        var touchStartX=0;
+        var touchStartY=0;
+        var wheelDelta=0;
+        var wheelResetTimer=0;
+        if(mainContent){
+          mainContent.addEventListener('touchstart',function(event){var touch=event.touches[0];if(!touch)return;touchStartX=touch.clientX;touchStartY=touch.clientY},{passive:true});
+          mainContent.addEventListener('touchend',function(event){var touch=event.changedTouches[0];if(!touch)return;var deltaX=touch.clientX-touchStartX;var deltaY=touch.clientY-touchStartY;if(Math.abs(deltaX)<64||Math.abs(deltaX)<=Math.abs(deltaY)*1.15)return;if(deltaX<0) updateStory(storyIndex+1);else updateStory(storyIndex-1)},{passive:true});
+          mainContent.addEventListener('wheel',function(event){
+            if(Math.abs(event.deltaY)<Math.abs(event.deltaX)&&Math.abs(event.deltaX)<12) return;
+            event.preventDefault();
+            wheelDelta+=Math.abs(event.deltaY)>=Math.abs(event.deltaX)?event.deltaY:event.deltaX;
+            window.clearTimeout(wheelResetTimer);
+            wheelResetTimer=window.setTimeout(function(){wheelDelta=0},180);
+            if(Math.abs(wheelDelta)<42) return;
+            var direction=wheelDelta>0?1:-1;
+            wheelDelta=0;
+            updateStory(storyIndex+direction);
+          },{passive:false});
+        }
+        var navTelegram=document.querySelector('[data-od-id="nav-telegram"]');
+        if(navTelegram) navTelegram.addEventListener('click',function(event){event.preventDefault();updateStory(6)});
+      }
     }());
   </script>
 </body>
